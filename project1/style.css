@@ -10,3 +10,8 @@ html {
     background-color: #d91a4e;
     font-size: 18px;
 }
+
+.content,
+.gallery {
+    background-color: #f6f6f6;
+}
