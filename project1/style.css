@@ -11,7 +11,33 @@ html {
     font-size: 18px;
 }
 
+h1 {
+}
+
+h2 {
+}
+
+p,
+a {
+}
+
+figcaption {
+}
+
+img {
+    max-width: 100px;
+}
+
 .content,
-.gallery {
+.gallerycontainer {
     background-color: #f6f6f6;
+}
+
+.gallery {
+    display: flex;
+}
+
+.img-set {
+    display: flex;
+    flex-direction: column;
 }
