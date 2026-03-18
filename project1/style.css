@@ -11,17 +11,32 @@ html {
     font-size: 18px;
 }
 
+nav ul {
+    display: flex;
+
+    padding: 2em;
+}
+
+a {
+    text-decoration: none;
+}
+
 h1 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin: auto;
 }
 
 h2 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 p,
 a {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 figcaption {
+    font-size: small;
 }
 
 img {
@@ -30,6 +45,10 @@ img {
 
 .content,
 .gallerycontainer {
+    border-radius: .50em;
+    margin: 20em auto;
+    padding: 1em;
+    max-width: 800px;
     background-color: #f6f6f6;
 }
 
@@ -40,4 +59,6 @@ img {
 .img-set {
     display: flex;
     flex-direction: column;
+
+    margin: 1rem;
 }
