@@ -46,7 +46,7 @@ img {
 .content,
 .gallerycontainer {
     border-radius: .50em;
-    margin: 20em auto;
+    margin: auto;
     padding: 1em;
     max-width: 800px;
     background-color: #f6f6f6;
