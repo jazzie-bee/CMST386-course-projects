@@ -22,7 +22,7 @@ nav {
     min-width: 43.75rem;
 }
 
-nav ul {
+ul {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,7 +58,8 @@ h2 {
 }
 
 p,
-a {
+a,
+ol {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
 
@@ -112,6 +113,10 @@ footer p {
 
     min-width: 6.7rem;
     z-index: 1;
+
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
 }
 
 .dropdown-content a {
@@ -133,6 +138,14 @@ footer p {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.ref {
+    text-align: left;
+}
+
+.ref:hover {
+    color: rgb(0, 153, 255);
 }
 
 .content,

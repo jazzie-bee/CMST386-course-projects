@@ -61,7 +61,7 @@ a:hover {
 
 .dropdown {
     float: left;
-    overflow: hidden;
+    /* overflow: hidden; */
 
     padding-bottom: 0.5rem;
 }
@@ -89,6 +89,10 @@ a:hover {
 
     min-width: 6.7rem;
     z-index: 1;
+
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
 }
 
 .dropdown-content a {
