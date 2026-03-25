@@ -7,7 +7,7 @@
 }
 
 html {
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
 
     background-color: #d91a4e;
     font-size: 18px;
