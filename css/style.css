@@ -82,6 +82,59 @@ footer p {
     text-align: center;
 }
 
+.dropdown {
+    float: left;
+    overflow: hidden;
+
+    padding-bottom: 0.5rem;
+}
+
+.dropdown .dropbtn {
+    font-size: 1rem;
+
+    border: none;
+    outline: none;
+    padding: 0.875rem 1rem;
+    margin: 0;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #970d32;
+    color: #f6f6f6;
+
+    transition: background-color 0.3s;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+
+    min-width: 6.7rem;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    float: none;
+
+    color: #121212;
+    text-decoration: none;
+    text-align: left;
+    padding: 0.875rem 1rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #584148;
+    color: #f6f6f6;
+
+    transition: background-color 0.3s;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 .content,
 .gallerycontainer {
     border-radius: 0.5em;
