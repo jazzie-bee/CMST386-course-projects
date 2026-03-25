@@ -84,3 +84,7 @@ a:hover {
 .dropdown-content a {
     padding: 12px 1rem;
 }
+
+.full-image {
+    color: #d91a4e;
+}
