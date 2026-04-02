@@ -54,16 +54,22 @@ h2 {
     font-weight: 400;
 
     margin: auto;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+
+    padding: 0.5rem 0;
 }
 
 p,
 a,
-ol {
+ol,
+ul {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
-
-    padding-bottom: 1rem;
 }
 
 figcaption {
@@ -190,8 +196,20 @@ footer p {
     overflow-y: auto;
 }
 
+.project2 p {
+    padding-bottom: 1rem;
+}
+
+.sub-header {
+    text-align: center;
+}
+
 .copy-ul {
     display: block;
 
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+
+    padding: 0.75rem 2rem;
     list-style: disc;
 }
