@@ -251,21 +251,7 @@
             <li>A robots.txt file and sitemap.xml to guide search engine crawlers.</li>
             <li>Fast page load times through optimized image formats (WebP).</li>
         </ul>
-
-        <br>
-
-        <h2>10. Project Reflection</h2>
-
-            <p>For the wireframes required in this proposal, I used Figma as my design tool of choice rather than the suggested options of Justinmind or Framebox. I already use Figma through my UI/UX design work and personal web design work. Figma's component and frame system make it ideal for wireframing the desktop UI concept, since I could mock up multiple "window" states and the taskbar layout efficiently and at varying fidelity levels. Figma is also very intuitive, from my experience, even as a new UI/UX and web designer.</p>
-            
-            <p>Building the flowchart diagram for the site was extremely helpful for thinking through the non-linear structure of this project's navigation model. Unlike a traditional linear site where pages flow in a hierarchy from home to subpages, the desktop UI concept uses a hub-and-spoke model where the desktop is always the central reference point and any window can be opened from any state. Mapping this out made me realize I needed to account for the fact that multiple windows might be open at the same time. This influenced my thinking about z-indexing, window focus behavior, and how the taskbar would need to reflect active windows, or not, because that's fine too.</p>
-            
-            <p>I used Figma for the site diagram as well, using its connector and shape tools to build the flowchart rather than a dedicated diagramming app. This kept everything in one tool, which simplified the workflow. Dedicated diagramming tools would have worked just as well and might be preferable for students who want a lower learning curve for this project.</p>
-            
-            <p>The main challenge in developing the navigation concept for this project was reconciling the fake desktop UI with web accessibility and usability expectations. Traditional desktop OS navigation relies heavily on mouse interaction—clicking, dragging, and right-clicking—which does not translate naturally to keyboard navigation or screen readers. Resolving this meant thinking carefully about how to ensure keyboard accessibility: each "window" trigger would need to be a focusable, actionable element; windows would need to keep the focus accordingly when open. I also had to consider how to handle the experience on mobile devices, where the desktop metaphor breaks down entirely, but it can still work. My resolution is to stack desktop icons like a normal responsive grid and design each window (page) to stack on top of one another like an ideal mobile responsive grid. Dragging the windows, of course, will be disabled in mobile.</p>
-            
-            <p>For someone new to creating web pages, I think the most common challenge in a project like this would be the gap between a strong visual concept and the technical skills needed to implement it. It is easy to sketch an ambitious design, for example, this simulated desktop with draggable windows, and then discover that the HTML and CSS required to build it are significantly more complex than anticipated. Managing that gap requires breaking the project down into smaller, achievable technical milestones and being willing to simplify or adjust the design when the implementation proves too complex for the current skill level. Starting with the structural HTML and basic CSS before adding any interactivity is a discipline that pays off throughout the development process. I have the basic knowledge to achieve this project. I'm still new to JS, but I feel that this is a doable project for me. If anything, good JS practice!</p>
-
+        
         <hr>
 
     <footer><p>&copy; 2025 Jazmine Brown. All Rights Reserved.</p></footer>
