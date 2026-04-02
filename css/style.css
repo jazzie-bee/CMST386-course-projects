@@ -22,7 +22,7 @@ nav {
     min-width: 43.75rem;
 }
 
-ul {
+nav ul {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,6 +30,9 @@ ul {
     margin: 0 auto;
     padding: 2em;
     gap: 2rem;
+}
+
+ul {
     list-style: none;
 }
 
