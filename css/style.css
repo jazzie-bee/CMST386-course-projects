@@ -184,3 +184,14 @@ footer p {
     text-align: center;
     margin-top: 0.25rem;
 }
+
+.project2 {
+    max-height: 1100px;
+    overflow-y: auto;
+}
+
+.copy-ul {
+    display: block;
+
+    list-style: disc;
+}
