@@ -28,15 +28,25 @@ hr {
 
 nav {
     min-width: 43.75rem;
+
+    position: fixed;
+    top: 0;
+
+    background-color: rgba(18, 18, 18, 0.9);
+    box-shadow: 0.06rem 0.01rem 0.2rem #121212;
+    width: 100%;
+    padding: 0 0.75rem;
+
+    z-index: 100;
 }
 
 nav ul {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
 
     margin: 0 auto;
-    padding: 2em;
+    padding: 0.75em;
     gap: 2rem;
 }
 
@@ -51,7 +61,7 @@ a {
     text-decoration: none;
 
     padding: 0.75rem 1rem;
-    color: #121212;
+    color: #fafafa;
     transition: background-color 0.3s;
 }
 
@@ -99,7 +109,6 @@ footer {
 footer p {
     text-align: center;
 }
-
 
 /* || NAV */
 .dropdown {
@@ -235,25 +244,9 @@ footer p {
     right: 0;
     max-height: 100vh;
     max-width: 100%;
-    z-index: 0;
+
+    z-index: -1;
     pointer-events: none;
-}
-
-.p4-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-}
-
-.p4-nav ul {
-    justify-content: left;
-
-    background-color: #fafafa;
-    box-shadow: 0.06rem 0.01rem 0.2rem #121212;
-
-    max-height: none;
-    padding: 0.5rem 1rem;
 }
 
 .desktop-icons-container {
@@ -264,7 +257,6 @@ footer p {
     position: absolute;
     top: 80px;
     left: 40px;
-    /* gap: 2.5rem; */
 
     max-height: 90vh;
 }
@@ -316,7 +308,7 @@ footer p {
     .desktop-icons-container {
         max-height: 600px;
     }
-    
+
     .bg-bust {
         display: none;
     }
