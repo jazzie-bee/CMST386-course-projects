@@ -10,6 +10,11 @@ html {
     scroll-behavior: smooth;
 
     background-color: #d91a4e;
+    /* background-image: url(../project4/images/art_portfolio_wallpaper.webp); */
+    background-image: url(../project4/images/art_portfolio_wallpaper.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+
     font-size: 18px;
     max-width: 100%;
 }
