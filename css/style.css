@@ -29,7 +29,7 @@ hr {
 nav {
     min-width: 43.75rem;
 
-    position: fixed;
+    position: relative;
     top: 0;
 
     background-color: rgba(18, 18, 18, 0.9);
@@ -176,14 +176,17 @@ footer p {
     color: rgb(0, 153, 255);
 }
 
+/* || Page Windows */
+
 /* || Projects 2-3 */
 .content,
 .gallerycontainer {
     display: flex;
     flex-direction: column;
 
+    border: solid 1px;
     border-radius: 0.5em;
-    margin: auto;
+    margin: 4rem auto;
     padding: 2em;
     max-width: 1000px;
     background-color: #f6f6f6;
