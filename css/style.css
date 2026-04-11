@@ -9,16 +9,14 @@
 body {
     scroll-behavior: smooth;
 
-    background-color: #fafafa; /* fallback */
+    background-color: #fafafa;
     background-image:
-        url(../project4/images/art_portfolio_bg_bust.webp),
         linear-gradient(#d91a4e 1px, transparent 1px),
         linear-gradient(90deg, #d91a4e 1px, transparent 1px);
     background-size:
-        cover,
         40px 40px,
         40px 40px;
-    background-repeat: no-repeat, repeat, repeat;
+    background-repeat: repeat, repeat;
 
     font-size: 18px;
     max-width: 100%;
@@ -102,6 +100,8 @@ footer p {
     text-align: center;
 }
 
+
+/* || NAV */
 .dropdown {
     float: left;
     overflow: hidden;
@@ -167,6 +167,7 @@ footer p {
     color: rgb(0, 153, 255);
 }
 
+/* || Projects 2-3 */
 .content,
 .gallerycontainer {
     display: flex;
@@ -227,6 +228,17 @@ footer p {
     list-style: disc;
 }
 
+/* || Project 4 */
+.bg-bust {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    max-height: 100vh;
+    max-width: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
 .p4-nav {
     position: fixed;
     top: 0;
@@ -252,7 +264,7 @@ footer p {
     position: absolute;
     top: 80px;
     left: 40px;
-    gap: 2rem;
+    /* gap: 2.5rem; */
 
     max-height: 90vh;
 }
@@ -262,8 +274,6 @@ footer p {
     flex-direction: column;
     align-items: center;
 
-    gap: 0.4rem;
-    padding: 0.5rem;
     border-radius: 6px;
 
     cursor: pointer;
@@ -294,15 +304,26 @@ footer p {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
 
+/* Laptop */
+@media only screen and (max-width: 1440px) {
+    .bg-bust {
+        width: 100vw;
+    }
+}
+
 /* tablet */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 600px) {
     .desktop-icons-container {
-        max-height: 600px; /* tighter, still columns */
+        max-height: 600px;
+    }
+    
+    .bg-bust {
+        display: none;
     }
 }
 
 /* mobile */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 450px) {
     .desktop-icons-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
