@@ -172,12 +172,13 @@ footer p {
     display: block;
 }
 
-.ref {
+.ref-link {
     text-align: left;
+    color: #584148;
 }
 
-.ref:hover {
-    color: rgb(0, 153, 255);
+.ref-link:hover {
+    color: #d91a4e;
 }
 
 /* || Page Windows */
