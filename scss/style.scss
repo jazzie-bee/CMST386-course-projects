@@ -1,0 +1,501 @@
+// ============================================================
+// style.scss — SASS Preprocessing Demo
+// Demonstrates: Variables, Mixins, Functions, Operators, Nesting
+// Compiled with: sass --watch scss/style.scss:css/style.css
+// ============================================================
+
+
+// ============================================================
+// 1. VARIABLES
+// Reusable values. Instead of repeating the
+// same color, font, or size across the stylesheet, you can define
+// it once and reference the variable name everywhere.
+// If you need to change it, you only update it in one place.
+// ============================================================
+
+// Colors
+$color-primary:     #d91a4e;
+$color-primary-dark:#970d32;
+$color-bg:          #fafafa;
+$color-surface:     #f6f6f6;
+$color-dark:        #121212;
+$color-nav-bg:      rgba(18, 18, 18, 0.9);
+$color-accent-dark: #584148;
+$color-ref-link:    #584148;
+$color-cyan:        aqua;
+$muted-color:      #777777;
+ 
+// Typography
+$font-display:      "Datatype", monospace;
+$font-body:         "Roboto", sans-serif;
+$font-base:         18px;
+$font-small:        0.75rem;
+$font-figcaption:   small;
+ 
+// Spacing
+$spacing-sm:        0.5rem;
+$spacing-md:        0.75rem;
+$spacing-lg:        1rem;
+$spacing-xl:        1.5rem;
+$spacing-2xl:       2rem;
+$spacing-section:   4rem;
+ 
+// Layout
+$container-max:     1000px;
+$nav-min-width:     43.75rem;
+$border-radius-sm:  0.313rem;
+$border-radius-md:  0.5rem;
+$gallery-img-size:  100px;
+ 
+// Grid background
+$grid-bg-size:      40px 40px;
+
+
+// ============================================================
+// 2. FUNCTIONS
+// Functions accept arguments and return a computed value.
+// Sass has many built-in functions (like lighten, darken),
+// and you can define your own with @function.
+// Here I defined a function that converts px to rem units 
+// (even though there are plugins for this).
+// ============================================================
+
+@function to-rem($px) {
+  @return $px / $font-base * 1rem;
+}
+
+// Usage examples (used below in actual rules):
+// to-rem(12px) → 0.75rem
+// to-rem(24px) → 1.5rem
+// to-rem(48px) → 3rem
+
+
+// ============================================================
+// 3. OPERATORS
+// Sass supports math operators: +, -, *, /, %.
+// I use them to keep spacing values proportional rather than
+// hardcoding every individual number.
+// ============================================================
+
+$nav-padding-v:     $spacing-md;                  // 0.75rem
+$nav-gap:           $spacing-lg * 2;              // 2rem
+$content-padding:   $spacing-xl;                  // 1.5rem
+$dropdown-padding:  $spacing-md + 0.125rem;       // 0.875rem
+$footer-margin:     $spacing-lg;                  // 1rem
+$ol-indent:         to-rem(60px);                 // ~3.33rem
+
+
+// ============================================================
+// 4. MIXINS
+// Mixins are reusable blocks of CSS you define with @mixin
+// and include anywhere with @include. They can also accept
+// parameters, making them flexible and dynamic.
+// ============================================================
+
+// Flex layout shortcut
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+ 
+// Window/container card — the "page window" pattern used throughout the project
+@mixin window-card {
+  border: solid 1px;
+  border-radius: $border-radius-md;
+  margin: $spacing-section auto;
+  max-width: $container-max;
+  background-color: $color-surface;
+}
+ 
+// Transition shortcut
+@mixin transition($prop: background-color, $duration: 0.3s) {
+  transition: $prop $duration;
+}
+ 
+// Responsive font size using our to-rem() function
+@mixin font-size($px) {
+  font-size: to-rem($px);
+}
+ 
+// Media query breakpoints — wraps the @media rules so we
+// don't have to repeat the pixel values everywhere
+@mixin breakpoint($size) {
+  @if $size == laptop {
+    @media only screen and (max-width: 1440px) { @content; }
+  } @else if $size == tablet {
+    @media only screen and (max-width: 600px)  { @content; }
+  } @else if $size == mobile {
+    @media only screen and (max-width: 450px)  { @content; }
+  }
+}
+
+// ============================================================
+// 5. NESTING
+// CSS rules are nested inside their parent selectors,
+// mirroring the HTML structure. The & symbol references the
+// parent selector for pseudo-classes and states like :hover.
+// my favorite thing about preprocessors because it keeps css
+// organized and easy to read.
+// ============================================================
+
+// --- Imported Fonts ---
+@import url("https://fonts.googleapis.com/css2?family=Datatype:wdth,wght@50..150,100..900&family=Iosevka+Charon+Mono&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+ 
+ 
+// --- Reset ---
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+ 
+// --- Body ---
+body {
+  scroll-behavior: smooth;
+  background-color: $color-bg;
+ 
+  // Operators: $color-primary used directly — no more hardcoded hex in gradients
+  background-image:
+    linear-gradient($color-primary 1px, transparent 1px),
+    linear-gradient(90deg, $color-primary 1px, transparent 1px);
+  background-size: $grid-bg-size, $grid-bg-size;
+  background-repeat: repeat, repeat;
+ 
+  font-size: $font-base;
+  max-width: 100%;
+}
+ 
+ 
+// --- HR ---
+hr {
+  margin: $spacing-lg 0;
+}
+ 
+ 
+// --- Navigation ---
+nav {
+  min-width: $nav-min-width;
+  position: relative;
+  top: 0;
+  background-color: $color-nav-bg;
+  box-shadow: 0.06rem 0.01rem 0.2rem $color-dark;
+  width: 100%;
+  padding: 0 $spacing-md;
+  z-index: 100;
+ 
+  // Nested: ul inside nav
+  ul {
+    @include flex(row, left, center);
+    margin: 0 auto;
+    padding: $nav-padding-v;   // Operator: $spacing-md = 0.75rem
+    gap: $nav-gap;             // Operator: $spacing-lg * 2 = 2rem
+  }
+}
+ 
+ 
+// --- Base List ---
+ul {
+  list-style: none;
+}
+ 
+ 
+// --- Links ---
+a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: $spacing-md $spacing-lg;
+  color: $color-bg;
+  @include transition();
+ 
+  // Nested: hover state using &
+  &:hover {
+    color: $color-cyan;
+  }
+}
+ 
+ 
+// --- Headings ---
+h1,
+h2 {
+  font-family: $font-display;
+  font-weight: 400;
+  margin: auto;
+  padding: $spacing-sm 0;
+}
+ 
+h3 {
+  font-family: $font-body;
+  font-weight: 500;
+  padding: $spacing-sm 0;
+}
+ 
+ 
+// --- Body Copy ---
+p,
+a,
+ol,
+ul {
+  font-family: $font-body;
+  font-weight: 400;
+}
+ 
+ol {
+  padding-left: $ol-indent;   // Function result: to-rem(60px)
+}
+ 
+ 
+// --- Misc Elements ---
+figcaption {
+  font-size: $font-figcaption;
+}
+ 
+img {
+  max-width: $gallery-img-size;
+}
+ 
+ 
+// --- Footer ---
+footer {
+  font-size: $font-small;
+  margin: $footer-margin 0 auto;
+ 
+  // Nested: p inside footer
+  p {
+    text-align: center;
+  }
+}
+ 
+ 
+// ============================================================
+// || NAV — Dropdown
+// ============================================================
+ 
+.dropdown {
+  float: left;
+  overflow: hidden;
+  padding-bottom: $spacing-sm;
+ 
+  // Nested: .dropbtn inside .dropdown
+  .dropbtn {
+    @include font-size(16px);   // Function used inside mixin
+    border: none;
+    outline: none;
+    padding: $dropdown-padding $spacing-lg;  // Operator: $spacing-md + 0.125rem
+    margin: 0;
+  }
+ 
+  // Nested: hover states using &
+  &:hover .dropbtn {
+    background-color: $color-primary-dark;
+    color: $color-surface;
+    @include transition();
+  }
+ 
+  &:hover .dropdown-content {
+    display: block;
+  }
+}
+ 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: $color-surface;
+  min-width: 6.7rem;
+  z-index: 1;
+  flex-direction: column;
+  padding: 0;
+  gap: 0;
+ 
+  // Nested: a links inside dropdown
+  a {
+    display: block;
+    float: none;
+    color: $color-dark;
+    text-decoration: none;
+    text-align: left;
+    padding: $dropdown-padding $spacing-lg;
+ 
+    &:hover {
+      background-color: $color-accent-dark;
+      color: $color-surface;
+      @include transition();
+    }
+  }
+}
+ 
+.ref-link {
+  text-align: left;
+  color: $color-ref-link;
+ 
+  &:hover {
+    color: $color-primary;
+  }
+}
+ 
+ 
+// ============================================================
+// || Page Windows
+// ============================================================
+ 
+.container {
+  @include flex(column);
+  @include window-card;       // Mixin: window card pattern
+}
+ 
+.title-bar {
+  @include flex(row, space-between);
+  border-bottom: solid $color-dark 1px;
+  padding: $spacing-md;
+}
+ 
+.content {
+  padding: $content-padding;  // Operator: $spacing-xl = 1.5rem
+}
+ 
+ 
+// ============================================================
+// || Gallery
+// ============================================================
+ 
+.gallery {
+  @include flex(row, space-around);
+  flex-wrap: wrap;
+  gap: $spacing-lg;
+ 
+  figure {
+    @include flex(column, flex-start, center);
+    width: $gallery-img-size;
+  }
+ 
+  img {
+    width: 100%;
+    display: block;
+  }
+ 
+  figcaption {
+    font-size: $font-figcaption;
+    text-align: center;
+    margin-top: $spacing-sm / 2;   // Operator: 0.5rem / 2 = 0.25rem
+  }
+}
+ 
+.project2 {
+  max-height: 1100px;
+  overflow-y: auto;
+ 
+  p {
+    padding-bottom: $spacing-lg;
+  }
+}
+ 
+.sub-header {
+  text-align: center;
+}
+ 
+.copy-ul {
+  display: block;
+  font-family: $font-body;
+  font-weight: 400;
+  padding: $spacing-md $spacing-2xl;
+  list-style: disc;
+}
+ 
+.cta-btn {
+  background-color: $color-primary;
+  border: solid $color-dark 1px;
+  border-radius: $border-radius-sm;
+  color: $color-dark;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-top: $spacing-2xl;
+}
+ 
+ 
+// ============================================================
+// || Project 4 — Desktop UI
+// ============================================================
+ 
+.bg-bust {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  max-height: 100vh;
+  max-width: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+ 
+.desktop-icons-container {
+  @include flex(column);
+  align-content: flex-start;
+  flex-flow: column wrap;
+  position: absolute;
+  top: 80px;
+  left: 40px;
+  max-height: 90vh;
+}
+ 
+.desktop-icon {
+  @include flex(column, flex-start, center);
+  border-radius: 6px;
+  cursor: pointer;
+ 
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+ 
+  // Nested: a and i inside .desktop-icon
+  a {
+    @include flex(column, flex-start, center);
+    gap: 0.4rem;
+    text-decoration: none;
+    color: inherit;
+  }
+ 
+  i {
+    font-size: 2.5rem;
+    color: $color-dark;
+  }
+}
+ 
+.ico-name {
+  font-size: $font-small;
+  color: $color-dark;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+ 
+ 
+// ============================================================
+// || Responsive Breakpoints
+// Using the breakpoint() mixin so pixel values are defined
+// once (in the mixin) instead of repeated at every query.
+// ============================================================
+ 
+@include breakpoint(laptop) {
+  .bg-bust {
+    width: 100vw;
+  }
+}
+ 
+@include breakpoint(tablet) {
+  .desktop-icons-container {
+    max-height: 600px;
+  }
+ 
+  .bg-bust {
+    display: none;
+  }
+}
+ 
+@include breakpoint(mobile) {
+  .desktop-icons-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-height: fit-content;
+  }
+}

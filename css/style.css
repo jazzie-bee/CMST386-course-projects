@@ -187,7 +187,7 @@ footer p {
     flex-direction: column;
 
     border: solid 1px;
-    border-radius: 0.5em;
+    border-radius: 0.5rem;
     margin: 4rem auto;
     max-width: 1000px;
     background-color: #f6f6f6;
