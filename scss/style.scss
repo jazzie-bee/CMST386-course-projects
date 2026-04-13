@@ -41,7 +41,8 @@ $spacing-2xl:       2rem;
 $spacing-section:   4rem;
  
 // Layout
-$container-max:     1000px;
+$container-max-width:     1000px;
+$container-max-height:     1100px;
 $nav-min-width:     43.75rem;
 $border-radius-sm:  0.313rem;
 $border-radius-md:  0.5rem;
@@ -105,7 +106,8 @@ $ol-indent:         to-rem(60px);                 // ~3.33rem
   border: solid 1px;
   border-radius: $border-radius-md;
   margin: $spacing-section auto;
-  max-width: $container-max;
+  max-width: $container-max-width;
+  max-height: $container-max-height;
   background-color: $color-surface;
 }
  
