@@ -373,11 +373,12 @@ footer {
   width: 800px;
   max-height: 600px;
 }
- 
+
+
 // ============================================================
 // || Gallery
 // ============================================================
- 
+
 .gallery {
   @include flex(row, space-around);
   flex-wrap: wrap;
@@ -399,7 +400,12 @@ footer {
     margin-top: $spacing-sm / 2;   // Operator: 0.5rem / 2 = 0.25rem
   }
 }
- 
+
+
+// ============================================================
+// || Project 2
+// ============================================================
+
 .project2 {
   max-height: 1100px;
   overflow-y: auto;
@@ -408,11 +414,11 @@ footer {
     padding-bottom: $spacing-lg;
   }
 }
- 
+
 .sub-header {
   text-align: center;
 }
- 
+
 .copy-ul {
   display: block;
   font-family: $font-body;
@@ -420,7 +426,7 @@ footer {
   padding: $spacing-md $spacing-2xl;
   list-style: disc;
 }
- 
+
 .cta-btn {
   background-color: $color-primary;
   border: solid $color-dark 1px;
@@ -430,12 +436,12 @@ footer {
   text-transform: uppercase;
   margin-top: $spacing-2xl;
 }
- 
- 
+
+
 // ============================================================
 // || Project 4 — Desktop UI
 // ============================================================
- 
+
 .bg-bust {
   position: fixed;
   bottom: 0;
