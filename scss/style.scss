@@ -104,11 +104,13 @@ $ol-indent:         to-rem(60px);                 // ~3.33rem
 // Window/container card — the "page window" pattern used throughout the project
 @mixin window-card {
   border: solid 1px;
-  border-radius: $border-radius-md;
+  border-radius: $border-radius-sm;
   margin: $spacing-section auto;
   max-width: $container-max-width;
   max-height: $container-max-height;
   background-color: $color-surface;
+  // resize: both;
+  // overflow: auto;
 }
  
 // Transition shortcut
@@ -346,6 +348,11 @@ footer {
 .container {
   @include flex(column);
   @include window-card;       // Mixin: window card pattern
+  display: none;
+
+  &.active {
+    display: flex;
+  }
 }
  
 .title-bar {
@@ -358,6 +365,14 @@ footer {
   padding: $content-padding;  // Operator: $spacing-xl = 1.5rem
 }
  
+// || Window Size Overrides
+// Each window can have its own dimensions while still
+// inheriting the base .container styles
+
+.container--works {
+  width: 800px;
+  max-height: 600px;
+}
  
 // ============================================================
 // || Gallery

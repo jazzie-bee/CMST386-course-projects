@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../scss/style.css">
+    <script src="main.js"></script>
     <script src="https://kit.fontawesome.com/9db0402647.js" crossorigin="anonymous"></script>
     <title>Proejct 4 - Art Portfolio Website</title>
 </head>
@@ -60,28 +61,28 @@
                 <p class="ico-name">Project 4</p>
             </a>
         </div>
-        <div class="desktop-icon">
+        <div class="desktop-icon" data-target="window-works">
             <a href="">
                 <!-- <img src="" alt="" class=""> -->
                 <i class="fa-solid fa-folder"></i>
                 <p class="ico-name">Works</p>
             </a>
         </div>
-        <div class="desktop-icon">
+        <div class="desktop-icon" data-target="window-lore">
             <a href="">
                 <!-- <img src="" alt="" class=""> -->
                 <i class="fa-solid fa-folder"></i>
                 <p class="ico-name">Lore</p>
             </a>
         </div>
-        <div class="desktop-icon">
+        <div class="desktop-icon" data-target="window-about">
             <a href="">
                 <!-- <img src="" alt="" class=""> -->
                 <i class="fa-solid fa-folder"></i>
                 <p class="ico-name">About</p>
             </a>
         </div>
-        <div class="desktop-icon">
+        <div class="desktop-icon" data-target="window-faq">
             <a href="">
                 <!-- <img src="" alt="" class=""> -->
                 <i class="fa-solid fa-folder"></i>
@@ -90,14 +91,48 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container container--works" id="window-works">
         <div class="title-bar">
             <div class="title">works.html</div>
             <div class="controls"><i class="fa-solid fa-xmark"></i></div>
         </div>
         <div class="content">
+            <aside>
+                <h2>Works</h2>
+                <p>Window info overview goes here.</p>
+                <a href="" class="commission-btn">Commission Me</a>
+            </aside>
 
+            <!-- work section will have scrollbar -->
+            <div class="work-content">
+                <div class="work-item">
+                    <h2>Project Name</h2>
+                    <img src="" alt="" class="project-preview">
+                    <a href="" class="project-btn">Project</a>
+                </div>
+                <div class="work-item">
+                    <h2>Project Name</h2>
+                    <img src="" alt="" class="project-preview">
+                    <a href="" class="project-btn">Project</a>
+                </div>
+                <div class="work-item">
+                    <h2>Project Name</h2>
+                    <img src="" alt="" class="project-preview">
+                    <a href="" class="project-btn">Project</a>
+                </div>
+                <div class="work-item">
+                    <h2>Project Name</h2>
+                    <img src="" alt="" class="project-preview">
+                    <a href="" class="project-btn">Project</a>
+                </div>
+                <div class="work-item">
+                    <h2>Project Name</h2>
+                    <img src="" alt="" class="project-preview">
+                    <a href="" class="project-btn">Project</a>
+                </div>
+            </div>
         </div>
+        <!-- Maybe scrolling banner at bottom of window. -->
     </div>
 
 </body>

@@ -156,11 +156,15 @@ footer p {
   justify-content: flex-start;
   align-items: stretch;
   border: solid 1px;
-  border-radius: 0.5rem;
+  border-radius: 0.313rem;
   margin: 4rem auto;
   max-width: 1000px;
   max-height: 1100px;
   background-color: #f6f6f6;
+  display: none;
+}
+.container.active {
+  display: flex;
 }
 
 .title-bar {
@@ -174,6 +178,11 @@ footer p {
 
 .content {
   padding: 1.5rem;
+}
+
+.container--works {
+  width: 800px;
+  max-height: 600px;
 }
 
 .gallery {
