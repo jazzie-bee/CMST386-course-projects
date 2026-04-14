@@ -110,7 +110,7 @@ $ol-indent:         to-rem(60px);                 // ~3.33rem
   max-height: $container-max-height;
   background-color: $color-surface;
   // resize: both;
-  // overflow: auto;
+  overflow: auto;
 }
  
 // Transition shortcut
@@ -349,6 +349,7 @@ footer {
   @include flex(column);
   @include window-card;       // Mixin: window card pattern
   display: none;
+  overflow: hidden;
 
   &.active {
     display: flex;
@@ -363,6 +364,7 @@ footer {
  
 .content {
   padding: $content-padding;  // Operator: $spacing-xl = 1.5rem
+  overflow-y: scroll;
 }
  
 // || Window Size Overrides
@@ -370,6 +372,21 @@ footer {
 // inheriting the base .container styles
 
 .container--works {
+  width: 900px;
+  max-height: 600px;
+}
+
+.container--lore {
+  width: 800px;
+  max-height: 600px;
+}
+
+.container--about {
+  width: 800px;
+  max-height: 600px;
+}
+
+.container--faq {
   width: 800px;
   max-height: 600px;
 }

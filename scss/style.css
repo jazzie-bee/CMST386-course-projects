@@ -161,7 +161,9 @@ footer p {
   max-width: 1000px;
   max-height: 1100px;
   background-color: #f6f6f6;
+  overflow: auto;
   display: none;
+  overflow: hidden;
 }
 .container.active {
   display: flex;
@@ -178,9 +180,25 @@ footer p {
 
 .content {
   padding: 1.5rem;
+  overflow-y: scroll;
 }
 
 .container--works {
+  width: 900px;
+  max-height: 600px;
+}
+
+.container--lore {
+  width: 800px;
+  max-height: 600px;
+}
+
+.container--about {
+  width: 800px;
+  max-height: 600px;
+}
+
+.container--faq {
   width: 800px;
   max-height: 600px;
 }
