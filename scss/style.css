@@ -162,10 +162,24 @@ footer p {
   max-height: 1100px;
   background-color: #f6f6f6;
   overflow: auto;
+}
+
+.window {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  border: solid 1px;
+  border-radius: 0.313rem;
+  margin: 4rem auto;
+  max-width: 1000px;
+  max-height: 1100px;
+  background-color: #f6f6f6;
+  overflow: auto;
   display: none;
   overflow: hidden;
 }
-.container.active {
+.window.active {
   display: flex;
 }
 

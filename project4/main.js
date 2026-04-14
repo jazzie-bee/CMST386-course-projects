@@ -14,6 +14,6 @@
   // Close window when X is clicked
   document.querySelectorAll('.controls').forEach(btn => {
     btn.addEventListener('click', () => {
-        btn.closest('.container').classList.remove('active');
+        btn.closest('.window').classList.remove('active');
     });
   });

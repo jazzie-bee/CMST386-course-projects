@@ -344,8 +344,13 @@ footer {
 // ============================================================
 // || Page Windows
 // ============================================================
- 
+
 .container {
+  @include flex(column);
+  @include window-card;
+}
+
+.window {
   @include flex(column);
   @include window-card;       // Mixin: window card pattern
   display: none;
