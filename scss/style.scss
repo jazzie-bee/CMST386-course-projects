@@ -108,7 +108,7 @@ $ol-indent:         to-rem(60px);                 // ~3.33rem
   margin: $spacing-section auto;
   max-width: $container-max-width;
   max-height: $container-max-height;
-  background-color: $color-surface;
+  background-color: $color-bg;
   // resize: both;
   overflow: auto;
 }
@@ -220,6 +220,34 @@ a {
     color: $color-cyan;
   }
 }
+
+// --- Btn Links ---
+.cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: $color-primary;
+  font-size: $font-body;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 1;
+
+  background-color: #ffffff;
+  border: solid $color-primary 2px;
+  box-shadow: 5px 5px 0px 0px $color-primary;
+  width: 200px;
+  height: 40px;
+  transition: 0.3s;
+  margin-top: $spacing-2xl;
+}
+
+.cta-btn:hover {
+  box-shadow: 0 0 $color-primary;
+  color: #fff;
+  background-color: $color-primary;
+}
  
  
 // --- Headings ---
@@ -267,7 +295,6 @@ footer {
   font-size: $font-small;
   margin: $footer-margin 0 auto;
  
-  // Nested: p inside footer
   p {
     text-align: center;
   }
@@ -285,9 +312,7 @@ footer {
  
   // Nested: .dropbtn inside .dropdown
   .dropbtn {
-    @include font-size(16px);   // Function used inside mixin
     border: none;
-    outline: none;
     padding: $dropdown-padding $spacing-lg;  // Operator: $spacing-md + 0.125rem
     margin: 0;
   }
@@ -374,24 +399,24 @@ footer {
  
 // || Window Size Overrides
 // Each window can have its own dimensions while still
-// inheriting the base .container styles
+// inheriting the base .window styles
 
-.container--works {
+.window--works {
   width: 900px;
   max-height: 600px;
 }
 
-.container--lore {
-  width: 800px;
-  max-height: 600px;
+.window--lore {
+  width: 850px;
+  max-height: 640px;
 }
 
-.container--about {
-  width: 800px;
-  max-height: 600px;
+.window--about {
+  width: 850px;
+  max-height: 640px;
 }
 
-.container--faq {
+.window--faq {
   width: 800px;
   max-height: 600px;
 }
@@ -447,16 +472,6 @@ footer {
   font-weight: 400;
   padding: $spacing-md $spacing-2xl;
   list-style: disc;
-}
-
-.cta-btn {
-  background-color: $color-primary;
-  border: solid $color-dark 1px;
-  border-radius: $border-radius-sm;
-  color: $color-dark;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin-top: $spacing-2xl;
 }
 
 
