@@ -24,14 +24,14 @@ $color-accent-dark: #584148;
 $color-ref-link:    #584148;
 $color-cyan:        aqua;
 $muted-color:      #777777;
- 
+
 // Typography
 $font-display:      "Datatype", monospace;
 $font-body:         "Roboto", sans-serif;
 $font-base:         18px;
 $font-small:        0.75rem;
 $font-figcaption:   small;
- 
+
 // Spacing
 $spacing-sm:        0.5rem;
 $spacing-md:        0.75rem;
@@ -39,7 +39,7 @@ $spacing-lg:        1rem;
 $spacing-xl:        1.5rem;
 $spacing-2xl:       2rem;
 $spacing-section:   4rem;
- 
+
 // Layout
 $container-max-width:     1000px;
 $container-max-height:     1100px;
@@ -47,7 +47,7 @@ $nav-min-width:     43.75rem;
 $border-radius-sm:  0.313rem;
 $border-radius-md:  0.5rem;
 $gallery-img-size:  100px;
- 
+
 // Grid background
 $grid-bg-size:      40px 40px;
 
@@ -100,7 +100,7 @@ $ol-indent:         to-rem(60px);                 // ~3.33rem
   justify-content: $justify;
   align-items: $align;
 }
- 
+
 // Window/container card — the "page window" pattern used throughout the project
 @mixin window-card {
   border: solid 1px;
@@ -110,19 +110,19 @@ $ol-indent:         to-rem(60px);                 // ~3.33rem
   max-height: $container-max-height;
   background-color: $color-bg;
   // resize: both;
-  overflow: auto;
+  // overflow: auto;
 }
- 
+
 // Transition shortcut
 @mixin transition($prop: background-color, $duration: 0.3s) {
   transition: $prop $duration;
 }
- 
+
 // Responsive font size using our to-rem() function
 @mixin font-size($px) {
   font-size: to-rem($px);
 }
- 
+
 // Media query breakpoints — wraps the @media rules so we
 // don't have to repeat the pixel values everywhere
 @mixin breakpoint($size) {
@@ -146,18 +146,18 @@ $ol-indent:         to-rem(60px);                 // ~3.33rem
 
 // --- Imported Fonts ---
 @import url("https://fonts.googleapis.com/css2?family=Datatype:wdth,wght@50..150,100..900&family=Iosevka+Charon+Mono&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
- 
- 
+
+
 // --- Reset ---
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
- 
- 
+
+
 // --- Body ---
-body {
+html, body {
   scroll-behavior: smooth;
   background-color: $color-bg;
  
@@ -169,16 +169,17 @@ body {
   background-repeat: repeat, repeat;
  
   font-size: $font-base;
-  max-width: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
- 
- 
+
+
 // --- HR ---
 hr {
   margin: $spacing-lg 0;
 }
- 
- 
+
+
 // --- Navigation ---
 nav {
   min-width: $nav-min-width;
@@ -194,18 +195,17 @@ nav {
   ul {
     @include flex(row, left, center);
     margin: 0 auto;
-    padding: $nav-padding-v;   // Operator: $spacing-md = 0.75rem
-    gap: $nav-gap;             // Operator: $spacing-lg * 2 = 2rem
+    gap: $nav-gap; // Operator: $spacing-lg * 2 = 2rem
   }
 }
- 
- 
+
+
 // --- Base List ---
 ul {
   list-style: none;
 }
- 
- 
+
+
 // --- Links ---
 a {
   text-decoration: none;
@@ -215,7 +215,7 @@ a {
 nav a {
   display: block;
   text-align: center;
-  padding: $spacing-md $spacing-lg;
+  padding: $spacing-md;
   color: $color-bg;
 
   &:hover {
@@ -287,7 +287,7 @@ ul {
 }
  
 ol {
-  padding-left: $ol-indent;   // Function result: to-rem(60px)
+  padding-left: $ol-indent;  // Function result: to-rem(60px)
 }
  
  
@@ -412,6 +412,12 @@ footer {
   padding: $content-padding;  // Operator: $spacing-xl = 1.5rem
   overflow-y: scroll;
 }
+
+.collapse-title {
+  background-color: $muted-color;
+  border-radius: $border-radius-sm;
+  padding: $spacing-lg * 1.5;
+}
  
 // || Window Size Overrides
 // Each window can have its own dimensions while still
@@ -460,7 +466,7 @@ footer {
   figcaption {
     font-size: $font-figcaption;
     text-align: center;
-    margin-top: $spacing-sm / 2;   // Operator: 0.5rem / 2 = 0.25rem
+    margin-top: $spacing-sm / 2;  // Operator: 0.5rem / 2 = 0.25rem
   }
 }
 
@@ -559,11 +565,7 @@ footer {
   }
 }
  
-@include breakpoint(tablet) {
-  .desktop-icons-container {
-    max-height: 600px;
-  }
- 
+@include breakpoint(tablet) { 
   .bg-bust {
     display: none;
   }
@@ -573,6 +575,12 @@ footer {
   .desktop-icons-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    position: relative;
+    top: auto;
+    left: auto;
+    gap: 30px 0px;
     max-height: fit-content;
+    width: 100%;
   }
 }
