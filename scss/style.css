@@ -5,7 +5,7 @@
   padding: 0;
 }
 
-html, body {
+body {
   scroll-behavior: smooth;
   background-color: #fafafa;
   background-image: linear-gradient(#d91a4e 1px, transparent 1px), linear-gradient(90deg, #d91a4e 1px, transparent 1px);
@@ -13,6 +13,9 @@ html, body {
   background-repeat: repeat, repeat;
   font-size: 18px;
   width: 100%;
+}
+
+html {
   overflow-x: hidden;
 }
 
@@ -26,7 +29,7 @@ nav {
   top: 0;
   background-color: rgba(18, 18, 18, 0.9);
   box-shadow: 0.06rem 0.01rem 0.2rem #121212;
-  width: 100%;
+  width: 100vw;
   padding: 0 0.75rem;
   z-index: 100;
 }

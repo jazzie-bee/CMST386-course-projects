@@ -157,7 +157,7 @@ $ol-indent:         to-rem(60px);                 // ~3.33rem
 
 
 // --- Body ---
-html, body {
+body {
   scroll-behavior: smooth;
   background-color: $color-bg;
  
@@ -170,6 +170,9 @@ html, body {
  
   font-size: $font-base;
   width: 100%;
+}
+
+html {
   overflow-x: hidden;
 }
 
@@ -187,7 +190,7 @@ nav {
   top: 0;
   background-color: $color-nav-bg;
   box-shadow: 0.06rem 0.01rem 0.2rem $color-dark;
-  width: 100%;
+  width: 100vw;
   padding: 0 $spacing-md;
   z-index: 100;
  
