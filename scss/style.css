@@ -44,15 +44,26 @@ ul {
 }
 
 a {
-  display: block;
-  text-align: center;
   text-decoration: none;
-  padding: 0.75rem 1rem;
-  color: #fafafa;
   transition: background-color 0.3s;
 }
-a:hover {
+
+nav a {
+  display: block;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  color: #fafafa;
+}
+nav a:hover {
   color: aqua;
+}
+
+a.link {
+  color: #d91a4e;
+  text-decoration: underline;
+}
+a.link:hover {
+  color: #970d32;
 }
 
 .cta-btn {
@@ -213,6 +224,11 @@ footer p {
   align-items: stretch;
   border-bottom: solid #121212 1px;
   padding: 0.75rem;
+  cursor: grab;
+}
+
+.controls {
+  cursor: pointer;
 }
 
 .content {
@@ -325,6 +341,7 @@ footer p {
   justify-content: flex-start;
   align-items: center;
   gap: 0.4rem;
+  padding: 0.75rem 1rem;
   text-decoration: none;
   color: inherit;
 }

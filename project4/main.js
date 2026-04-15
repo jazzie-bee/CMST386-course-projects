@@ -1,5 +1,5 @@
 // Open window when icon is clicked
-  document.querySelectorAll('.desktop-icon').forEach(icon => {
+const icons = document.querySelectorAll('.desktop-icon').forEach(icon => {
     icon.addEventListener('click', (e) => {
         const targetId = icon.dataset.target;
 
@@ -9,11 +9,21 @@
             if (win) win.classList.add('active');
         }
     });
-  });
+});
 
-  // Close window when X is clicked
-  document.querySelectorAll('.controls').forEach(btn => {
+// Close window when X is clicked
+const controls = document.querySelectorAll('.controls').forEach(btn => {
     btn.addEventListener('click', () => {
         btn.closest('.window').classList.remove('active');
     });
-  });
+});
+
+// Bring window to front on click
+const wins = document.querySelectorAll('.window')
+  wins.forEach(win => {
+win.addEventListener("click", () => {
+    win.style.zIndex = 1000
+    })
+})
+
+// Draggable windows

@@ -208,16 +208,27 @@ ul {
  
 // --- Links ---
 a {
+  text-decoration: none;
+  @include transition();
+}
+
+nav a {
   display: block;
   text-align: center;
-  text-decoration: none;
   padding: $spacing-md $spacing-lg;
   color: $color-bg;
-  @include transition();
- 
-  // Nested: hover state using &
+
   &:hover {
     color: $color-cyan;
+  }
+}
+
+a.link {
+  color: $color-primary;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-primary-dark;
   }
 }
 
@@ -377,7 +388,7 @@ footer {
 
 .window {
   @include flex(column);
-  @include window-card;       // Mixin: window card pattern
+  @include window-card;   // Mixin: window card pattern
   display: none;
   overflow: hidden;
 
@@ -390,6 +401,11 @@ footer {
   @include flex(row, space-between);
   border-bottom: solid $color-dark 1px;
   padding: $spacing-md;
+  cursor: grab; 
+}
+
+.controls {
+  cursor: pointer;
 }
  
 .content {
@@ -512,6 +528,7 @@ footer {
   a {
     @include flex(column, flex-start, center);
     gap: 0.4rem;
+    padding: $spacing-md $spacing-lg;
     text-decoration: none;
     color: inherit;
   }
