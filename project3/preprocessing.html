@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Project 3 - Preprocessing how to implement preprocessing into your website as well as define and describe the mechanisms used in SASS.">
+    <meta name="keywords" content="portfolio, responsive design, desktop os, desktop website, css preprocessor, sass">
     <link rel="stylesheet" href="../scss/style.css">
     <script src="https://kit.fontawesome.com/9db0402647.js" crossorigin="anonymous"></script>
     <title>Project 3 - Preprocessing</title>
@@ -23,8 +25,17 @@
         </ul>
     </nav>
 
+    <!-- breadcrumb nav -->
+    <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="/project3/project3.html">Project 3</a></li>
+        <li class="breadcrumb-item current">Preprocessing</li>
+    </ol>
+    </nav>
+
     <div class="desktop-icons-container">
-        <div class="desktop-icon home">
+        <div class="desktop-icon">
             <a href="/index.html">
                 <!-- <img src="" alt="" class=""> -->
                 <i class="fa-solid fa-folder"></i>
@@ -102,6 +113,8 @@
             <div class="controls"><i class="fa-solid fa-xmark"></i></div>
         </div>
         <div class="content">
+            <h1>Project 3 - Preprocessing</h1>
+
             <p>CSS preprocessing can be implemented in two ways. Client-side preprocessing compiles the preprocessor file (like a .scss file) directly in the browser at runtime, which requires linking a JavaScript compiler in your HTML. While convenient for quick prototyping, it adds load overhead and is not recommended for production. Server-side preprocessing (the more common and preferred approach) compiles your .scss files into plain .css files ahead of time — before they're ever served to a browser. Tools like Dart Sass, Node.js scripts, or GUI apps like CodeKit handle this compilation step, producing optimized CSS that loads faster and requires no client-side processing.</p>
             <br>
             <p>Sass is a professional-grade CSS extension language sass-lang that introduces several powerful features:</p>
@@ -126,9 +139,9 @@
             <h2>Nesting</h2>
             <p>Lets you write CSS that mirrors the structure of your HTML, placing child selectors inside their parent selectors. This reduces repetition and makes stylesheets far more readable. For example, writing nav { ul { list-style: none; } } compiles cleanly to nav ul { list-style: none; }.</p>
 
-            <!-- How I implemented SASS: I used the Live Sass Compiler extension in  VSCode to compile my .scss source files into .css files. When I saved changes to my .scss file, it automatically recompiled into the linked CSS file. I took advantage of SASS variables to manage my color palette and font sizes globally, making site-wide updates quick and consistent. I used mixins to handle 
-            repeated layout patterns like my nacbar, flexbox containers, and button styles. Nesting kept my 
-            stylesheet organized by mirroring my HTML structure. -->
+            <!-- <link rel="stylesheet" href="../scss/style.scss">
+            How I implemented SASS: I used the Live Sass Compiler extension in  VSCode to compile my .scss source files into .css files. When I saved changes to my .scss file, it automatically recompiled into the linked CSS file. I took advantage of SASS variables to manage my color palette and font sizes globally, making site-wide updates quick and consistent. I used mixins to handle 
+            repeated layout patterns like my nacbar, flexbox containers, and button styles. Nesting kept my stylesheet organized by mirroring my HTML structure. -->
         </div>
     </div>
 

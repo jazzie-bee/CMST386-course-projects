@@ -262,7 +262,11 @@ a.link {
   color: #fff;
   background-color: $color-primary;
 }
- 
+
+.preprocessing {
+  border-radius: $border-radius-md;
+  padding: $spacing-lg;
+}
  
 // --- Headings ---
 h1,
@@ -378,8 +382,43 @@ footer {
     color: $color-primary;
   }
 }
- 
- 
+
+// ============================================================
+// || Breadcrumb Nav
+// ============================================================
+
+.breadcrumb {
+  @include flex(row, flex-start, center);
+  list-style: none;
+  padding: $spacing-sm $spacing-xl;
+  gap: $spacing-sm;
+  font-size: $font-small;
+
+  li {
+    @include flex(row, flex-start, center);
+    gap: $spacing-sm;
+
+    & + li::before {
+      content: '/';
+      color: $muted-color;
+    }
+  }
+
+  a {
+    color: $color-primary;
+    padding: 0;  // overrides the nav a padding
+
+    &:hover {
+      color: $color-primary-dark;
+    }
+  }
+
+  .current {
+    color: $muted-color;
+    pointer-events: none;
+  }
+}
+
 // ============================================================
 // || Page Windows
 // ============================================================
