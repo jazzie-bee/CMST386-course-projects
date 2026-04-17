@@ -337,20 +337,6 @@ footer p {
   padding: 1.5rem;
 }
 
-.to-top {
-  position: sticky;
-  align-self: flex-end;
-  bottom: 1rem;
-  font-size: 2rem;
-  color: #d91a4e;
-  padding: 0.75rem;
-  transition: color 0.3s ease;
-  z-index: 10;
-}
-.to-top:hover {
-  color: #970d32;
-}
-
 .window--works {
   width: 900px;
   max-height: 600px;
@@ -414,6 +400,28 @@ footer p {
   font-weight: 400;
   padding: 0.75rem 2rem;
   list-style: disc;
+}
+
+.to-top {
+  position: sticky;
+  align-self: flex-end;
+  bottom: 1rem;
+  font-size: 2rem;
+  color: #d91a4e;
+  padding: 0.75rem;
+  transition: color 0.3s ease;
+  z-index: 10;
+}
+.to-top:hover {
+  color: #970d32;
+}
+
+.col-sidebar {
+  padding: 0.75rem;
+  border-left: 1px solid #121212;
+}
+.col-sidebar li {
+  padding: 0.5rem;
 }
 
 .bg-bust {

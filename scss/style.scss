@@ -518,23 +518,6 @@ footer {
   border-radius: $border-radius-sm;
   padding: $spacing-lg * 1.5;
 }
-
-.to-top {
-	position: sticky;
-  align-self: flex-end;
-	bottom: $spacing-lg;
-
-  font-size: 2rem;
-  color: $color-primary;
-
-  padding: $spacing-md;
-  transition: color 0.3s ease;
-  z-index: 10;
-
-  &:hover {
-    color: $color-primary-dark;
-  }
-}
  
 // || Window Size Overrides
 // Each window can have its own dimensions while still
@@ -613,6 +596,35 @@ footer {
   list-style: disc;
 }
 
+// ============================================================
+// || Project 3
+// ============================================================
+
+.to-top {
+	position: sticky;
+  align-self: flex-end;
+	bottom: $spacing-lg;
+
+  font-size: 2rem;
+  color: $color-primary;
+
+  padding: $spacing-md;
+  transition: color 0.3s ease;
+  z-index: 10;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
+}
+
+.col-sidebar {
+  padding: $spacing-md;
+  border-left: 1px solid $color-dark;
+
+  li {
+    padding: $spacing-sm;
+  }
+}
 
 // ============================================================
 // || Project 4 — Desktop UI
