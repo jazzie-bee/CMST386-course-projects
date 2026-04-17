@@ -244,7 +244,6 @@ a.link {
   justify-content: center;
 
   color: $color-primary;
-  font-size: $font-body;
   font-weight: 800;
   text-decoration: none;
   text-transform: uppercase;
@@ -269,7 +268,6 @@ a.link {
   color: $color-bg;
   line-height: 1;
   text-decoration: none;
-  font-size: $font-body;
   font-weight: bold;
 
   border: 2px solid $color-bg;
@@ -485,7 +483,7 @@ footer {
 
 .content-three-col {
   display: grid;
-  grid-template-columns: repeat(3fr, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: $spacing-xl;
   padding: $content-padding;
 
