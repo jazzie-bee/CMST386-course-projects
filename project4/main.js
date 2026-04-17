@@ -22,7 +22,7 @@ const controls = document.querySelectorAll('.controls').forEach(btn => {
 const wins = document.querySelectorAll('.window')
     wins.forEach(win => {
         win.addEventListener("click", () => {
-            win.style.zIndex = 1000
+            win.style.zIndex = 1000;
         });
     });
 
