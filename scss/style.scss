@@ -334,12 +334,12 @@ footer {
     text-align: center;
   }
 }
- 
- 
+
+
 // ============================================================
 // || NAV — Dropdown
 // ============================================================
- 
+
 .dropdown {
   float: left;
   overflow: hidden;
@@ -363,7 +363,7 @@ footer {
     display: block;
   }
 }
- 
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -373,7 +373,7 @@ footer {
   flex-direction: column;
   padding: 0;
   gap: 0;
- 
+
   // Nested: a links inside dropdown
   a {
     display: block;
@@ -390,7 +390,7 @@ footer {
     }
   }
 }
- 
+
 .ref-link {
   text-align: left;
   color: $color-ref-link;
@@ -455,7 +455,7 @@ footer {
     display: flex;
   }
 }
- 
+
 .title-bar {
   @include flex(row, space-between);
   font-family: $font-body; 
@@ -517,6 +517,23 @@ footer {
   background-color: $muted-color;
   border-radius: $border-radius-sm;
   padding: $spacing-lg * 1.5;
+}
+
+.to-top {
+	position: sticky;
+  align-self: flex-end;
+	bottom: $spacing-lg;
+
+  font-size: 2rem;
+  color: $color-primary;
+
+  padding: $spacing-md;
+  transition: color 0.3s ease;
+  z-index: 10;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
 }
  
 // || Window Size Overrides

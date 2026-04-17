@@ -109,45 +109,37 @@
     </div>
 
     <div class="container">
+
         <div class="title-bar">
             <div class="title">preprocessing.html</div>
             <div class="controls"><i class="fa-solid fa-xmark"></i></div>
         </div>
         <div class="content content-three-col">
-            <h1>Project 3 - Preprocessing</h1>
+            <h1 id="top">Project 3 - Preprocessing</h1>
 
             <p>CSS preprocessing can be implemented in two ways. Client-side preprocessing compiles the preprocessor file (like a .scss file) directly in the browser at runtime, which requires linking a JavaScript compiler in your HTML. While convenient for quick prototyping, it adds load overhead and is not recommended for production. Server-side preprocessing (the more common and preferred approach) compiles your .scss files into plain .css files ahead of time — before they're ever served to a browser. Tools like Dart Sass, Node.js scripts, or GUI apps like CodeKit handle this compilation step, producing optimized CSS that loads faster and requires no client-side processing.</p>
-            <br>
+
             <p>Sass is a professional-grade CSS extension language sass-lang that introduces several powerful features:</p>
-            <br>
 
             <div class="feature-card">
                 <h2>Variables</h2>
                 <p>Store reusable values like colors, fonts, or spacing. Instead of hardcoding #3a86ff across dozens of rules, you define $primary-color: #3a86ff once and reference it everywhere — making global updates instant.</p>
             </div>
 
-            <br>
-
             <div class="feature-card">
                 <h2>Mixins</h2>
                 <p>Reusable blocks of CSS declarations you define once and include anywhere with @include. They're especially useful for vendor prefixes or repeated style patterns like button styles or flexbox layouts.</p>
             </div>
-            
-            <br>
 
             <div class="feature-card">
                 <h2>Functions</h2>
                 <p>Let you compute and return values — for example, calculating a percentage-based width or manipulating a color's lightness programmatically. Sass includes built-in functions (like darken() and lighten()) and lets you define custom ones with @function.</p>
             </div>
 
-            <br>
-
             <div class="feature-card">
                 <h2>Operators</h2>
                 <p>Allow math directly in your stylesheets — addition, subtraction, multiplication, and division — so you can write things like width: 100% / 3 instead of manually calculating 33.33%.</p>
             </div>
-
-            <br>
 
             <div class="feature-card">
                 <h2>Nesting</h2>
@@ -158,6 +150,10 @@
             How I implemented SASS: I used the Live Sass Compiler extension in  VSCode to compile my .scss source files into .css files. When I saved changes to my .scss file, it automatically recompiled into the linked CSS file. I took advantage of SASS variables to manage my color palette and font sizes globally, making site-wide updates quick and consistent. I used mixins to handle 
             repeated layout patterns like my nacbar, flexbox containers, and button styles. Nesting kept my stylesheet organized by mirroring my HTML structure. -->
         </div>
+        
+	    <a href="#top" class="to-top" aria-label="back to top">
+            <i class="fa-solid fa-chevron-up"></i>
+        </a>
     </div>
 
     <img src="../project4/images/art_portfolio_bg_bust.webp" class="bg-bust" alt="">
