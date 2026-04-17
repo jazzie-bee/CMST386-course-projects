@@ -18,6 +18,7 @@ $color-primary:     #d91a4e;
 $color-primary-dark:#970d32;
 $color-bg:          #fafafa;
 $color-surface:     #f6f6f6;
+$color-surface-md:     #e2e2e2;
 $color-dark:        #121212;
 $color-nav-bg:      rgba(18, 18, 18, 0.9);
 $color-accent-dark: #584148;
@@ -201,6 +202,7 @@ nav {
     gap: $nav-gap; // Operator: $spacing-lg * 2 = 2rem
   }
 }
+
 
 
 // --- Base List ---
@@ -469,6 +471,46 @@ footer {
 .content {
   padding: $content-padding;  // Operator: $spacing-xl = 1.5rem
   overflow-y: scroll;
+}
+
+.content-two-col {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: $spacing-2xl;
+  padding: $content-padding;
+
+  @include breakpoint(tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.content-three-col {
+  display: grid;
+  grid-template-columns: repeat(3fr, 1fr);
+  gap: $spacing-xl;
+  padding: $content-padding;
+
+  @include breakpoint(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature-card {
+  background-color: $color-surface-md;
+  border-bottom: 1px solid $color-primary-dark;
+  border-radius: $border-radius-sm;
+  padding: $spacing-xl;
+
+  h2 {
+    color: $color-primary;
+    border-bottom: 2px solid $color-primary;
+    padding-bottom: $spacing-sm;
+    margin-bottom: $spacing-md;
+  }
 }
 
 .collapse-title {
