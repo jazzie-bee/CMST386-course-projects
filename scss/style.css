@@ -109,7 +109,7 @@ a.link:hover {
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: 0px 4px 10px -1px rgba(0, 0, 0, 0.3);
-  background-color: linear-gradient(90deg, rgb(217, 26, 78), rgb(151, 13, 50));
+  background: linear-gradient(90deg, rgb(217, 26, 78), rgb(151, 13, 50));
 }
 
 .preprocessing:hover {
