@@ -8,11 +8,18 @@
 body {
   scroll-behavior: smooth;
   background-color: #fafafa;
+  font-size: 18px;
+  width: 100%;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
   background-image: linear-gradient(#d91a4e 1px, transparent 1px), linear-gradient(90deg, #d91a4e 1px, transparent 1px);
   background-size: 40px 40px, 40px 40px;
   background-repeat: repeat, repeat;
-  font-size: 18px;
-  width: 100%;
+  z-index: -2;
 }
 
 html {
@@ -74,7 +81,6 @@ a.link:hover {
   align-items: center;
   justify-content: center;
   color: #d91a4e;
-  font-size: "Roboto", sans-serif;
   font-weight: 800;
   text-decoration: none;
   text-transform: uppercase;
@@ -98,14 +104,12 @@ a.link:hover {
   color: #fafafa;
   line-height: 1;
   text-decoration: none;
-  font-size: "Roboto", sans-serif;
   font-weight: bold;
   border: 2px solid #fafafa;
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: 0px 4px 10px -1px rgba(0, 0, 0, 0.3);
-  background-color: [object object];
-  background-image: linear-gradient(90deg, rgb(217, 26, 78), rgb(151, 13, 50));
+  background-color: linear-gradient(90deg, rgb(217, 26, 78), rgb(151, 13, 50));
 }
 
 .preprocessing:hover {
@@ -267,6 +271,7 @@ footer p {
 }
 .window.active {
   display: flex;
+  z-index: 50;
 }
 
 .title-bar {
@@ -303,7 +308,7 @@ footer p {
 
 .content-three-col {
   display: grid;
-  grid-template-columns: repeat(3fr, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   padding: 1.5rem;
 }
@@ -445,6 +450,7 @@ footer p {
   top: 80px;
   left: 40px;
   max-height: 90vh;
+  z-index: 10;
 }
 
 .desktop-icon {
@@ -501,6 +507,7 @@ footer p {
     gap: 30px 0px;
     max-height: -moz-fit-content;
     max-height: fit-content;
-    width: 100%;
+    width: 100vw;
+    padding: 1rem 0;
   }
 }/*# sourceMappingURL=style.css.map */
