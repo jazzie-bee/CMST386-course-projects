@@ -110,8 +110,6 @@ $ol-indent:         to-rem(60px);                 // ~3.33rem
   max-width: $container-max-width;
   max-height: $container-max-height;
   background-color: $color-bg;
-  // resize: both;
-  // overflow: auto;
 }
 
 // Transition shortcut
@@ -447,6 +445,7 @@ footer {
 .container {
   @include flex(column);
   @include window-card;
+  z-index: 20;
 }
 
 .window {
@@ -454,6 +453,7 @@ footer {
   @include window-card;   // Mixin: window card pattern
   display: none;
   overflow: hidden;
+  z-index: 20;
 
   &.active {
     display: flex;
@@ -704,6 +704,12 @@ footer {
   .bg-bust {
     display: none;
   }
+
+  .container, 
+  .window {
+    width: 90vw;
+    max-height: 70vh;
+  }
 }
  
 @include breakpoint(mobile) {
@@ -718,5 +724,12 @@ footer {
     max-height: fit-content;
     width: 100vw;
     padding: $spacing-lg 0;
+  }
+
+  .container, 
+  .window {
+    width: 92vw;
+    max-height: 75vh;
+    margin: $spacing-lg auto;
   }
 }

@@ -253,6 +253,7 @@ footer p {
   max-width: 1000px;
   max-height: 1100px;
   background-color: #fafafa;
+  z-index: 20;
 }
 
 .window {
@@ -268,6 +269,7 @@ footer p {
   background-color: #fafafa;
   display: none;
   overflow: hidden;
+  z-index: 20;
 }
 .window.active {
   display: flex;
@@ -495,6 +497,11 @@ footer p {
   .bg-bust {
     display: none;
   }
+  .container,
+  .window {
+    width: 90vw;
+    max-height: 70vh;
+  }
 }
 @media only screen and (max-width: 450px) {
   .desktop-icons-container {
@@ -509,5 +516,11 @@ footer p {
     max-height: fit-content;
     width: 100vw;
     padding: 1rem 0;
+  }
+  .container,
+  .window {
+    width: 92vw;
+    max-height: 75vh;
+    margin: 1rem auto;
   }
 }/*# sourceMappingURL=style.css.map */

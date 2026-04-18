@@ -20,10 +20,11 @@ const controls = document.querySelectorAll('.controls').forEach(btn => {
 
 // Bring window to front on click
 const wins = document.querySelectorAll('.window')
-    wins.forEach(win => {
-        win.addEventListener("click", () => {
-            win.style.zIndex = 1000;
-        });
+wins.forEach(win => {
+    win.addEventListener("click", () => {
+        wins.forEach(w => w.style.zIndex = 50);
+        win.style.zIndex = 100;
     });
+});
 
 // Draggable windows
