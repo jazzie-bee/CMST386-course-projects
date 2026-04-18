@@ -110,6 +110,7 @@ $ol-indent:         to-rem(60px);                 // ~3.33rem
   max-width: $container-max-width;
   max-height: $container-max-height;
   background-color: $color-bg;
+  position: relative;
 }
 
 // Transition shortcut

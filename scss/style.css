@@ -253,6 +253,7 @@ footer p {
   max-width: 1000px;
   max-height: 1100px;
   background-color: #fafafa;
+  position: relative;
   z-index: 20;
 }
 
@@ -267,6 +268,7 @@ footer p {
   max-width: 1000px;
   max-height: 1100px;
   background-color: #fafafa;
+  position: relative;
   display: none;
   overflow: hidden;
   z-index: 20;
