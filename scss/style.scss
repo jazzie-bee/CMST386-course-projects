@@ -529,22 +529,22 @@ footer {
 // Each window can have its own dimensions while still
 // inheriting the base .window styles
 
-.window--works {
+.window-works {
   width: 900px;
   max-height: 600px;
 }
 
-.window--lore {
+.window-lore {
   width: 850px;
   max-height: 640px;
 }
 
-.window--about {
+.window-about {
   width: 850px;
   max-height: 640px;
 }
 
-.window--faq {
+.window-faq {
   width: 800px;
   max-height: 600px;
 }
