@@ -1,6 +1,5 @@
 let topZ = 100;
 let openCount = 0;
-const maxOffset = 3;
 
 // Open window when icon is clicked
 const icons = document.querySelectorAll('.desktop-icon').forEach(icon => {
@@ -12,7 +11,7 @@ const icons = document.querySelectorAll('.desktop-icon').forEach(icon => {
             const win = document.getElementById(targetId);
             // if (win) win.classList.add('active');
             if (win && !win.classList.contains('active')) {
-                const offset = (openCount % maxOffset)* 48;
+                const offset = openCount * 24;
                 win.style.top = `calc(50% + ${offset}px)`;
                 win.style.left = `calc(50% + ${offset}px)`;
                 win.style.zIndex = ++topZ;

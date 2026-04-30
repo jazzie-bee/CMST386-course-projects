@@ -506,7 +506,6 @@ footer {
 .content {
   display: flex;
   padding: 0;
-  // overflow-y: scroll;
   overflow: hidden;
   height: 100%;
 }
@@ -561,6 +560,11 @@ footer {
 // Each window can have its own dimensions while still
 // inheriting the base .window styles
 
+.window-characters {
+  width: 900px;
+  max-height: 600px;
+}
+
 .window-works {
   width: 900px;
   max-height: 600px;
@@ -572,6 +576,11 @@ footer {
 }
 
 .window-about {
+  width: 850px;
+  max-height: 640px;
+}
+
+.window-process {
   width: 850px;
   max-height: 640px;
 }
