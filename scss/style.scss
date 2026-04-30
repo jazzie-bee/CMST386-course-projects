@@ -18,7 +18,7 @@ $color-primary:     #d91a4e;
 $color-primary-dark:#970d32;
 $color-bg:          #fafafa;
 $color-surface:     #f6f6f6;
-$color-surface-md:     #e2e2e2;
+$color-surface-md:  #e2e2e2;
 $color-dark:        #121212;
 $color-nav-bg:      rgba(18, 18, 18, 0.9);
 $color-accent-dark: #584148;
@@ -48,6 +48,8 @@ $nav-min-width:     43.75rem;
 $border-radius-sm:  0.313rem;
 $border-radius-md:  0.5rem;
 $gallery-img-size:  100px;
+$logo-img-sm:       110px;
+$logo-img-lg:       220px;
 
 // Grid background
 $grid-bg-size:      40px 40px;
@@ -106,11 +108,34 @@ $ol-indent:         to-rem(60px);                 // ~3.33rem
 @mixin window-card {
   border: solid 1px;
   border-radius: $border-radius-sm;
-  margin: $spacing-section auto;
   max-width: $container-max-width;
   max-height: $container-max-height;
   background-color: $color-bg;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Side panel - fixed sidebar with border separator
+@mixin aside-panel($width: 220px) {
+  flex: 0 0 $width;
+  justify-content: center;
+  text-align: center;
+  border-right: 1px solid $color-dark;
+  padding: $spacing-xl;
+  background-color: $color-bg;
+  align-self: stretch;
+}
+
+// Item cards - for preview card of characters, lore, works, etc.
+@mixin item-card {
+  @include flex(column, flex-start, center);
+  border: 1px solid $color-dark;
+  border-radius: $border-radius-sm;
+  padding: $spacing-xl;
+  margin: 0 0 24px;
+  gap: $spacing-md;
 }
 
 // Transition shortcut
@@ -167,8 +192,8 @@ body {
 
 body::before {
   content: '';
-position: fixed;
-inset: 0;
+  position: fixed;
+  inset: 0;
 
     // Operators: $color-primary used directly — no more hardcoded hex in gradients
   background-image:
@@ -210,7 +235,6 @@ nav {
 }
 
 
-
 // --- Base List ---
 ul {
   list-style: none;
@@ -249,15 +273,15 @@ a.link {
   align-items: center;
   justify-content: center;
 
-  color: $color-primary;
+  color: $color-dark;
   font-weight: 800;
   text-decoration: none;
   text-transform: uppercase;
   line-height: 1;
 
-  background-color: #ffffff;
-  border: 2px solid $color-primary;
-  box-shadow: 5px 5px 0px 0px $color-primary;
+  background-color: $color-surface;
+  border: 2px solid $color-dark;
+  box-shadow: 5px 5px 0px 0px $color-dark;
   width: 200px;
   height: 40px;
   transition: 0.3s;
@@ -268,6 +292,7 @@ a.link {
   box-shadow: 0 0 $color-primary;
   color: #fff;
   background-color: $color-primary;
+  border: 2px solid $color-primary;
 }
 
 .preprocessing {
@@ -326,7 +351,11 @@ figcaption {
 img {
   max-width: $gallery-img-size;
 }
- 
+
+svg {
+  max-width: $logo-img-sm;
+}
+
  
 // --- Footer ---
 footer {
@@ -475,8 +504,11 @@ footer {
 }
  
 .content {
-  padding: $content-padding;  // Operator: $spacing-xl = 1.5rem
-  overflow-y: scroll;
+  display: flex;
+  padding: 0;
+  // overflow-y: scroll;
+  overflow: hidden;
+  height: 100%;
 }
 
 .content-two-col {
@@ -549,6 +581,12 @@ footer {
   max-height: 600px;
 }
 
+// || Window Flex Overrides
+
+.faq-content,
+.work-content {
+  display: block;
+}
 
 // ============================================================
 // || Gallery
@@ -687,7 +725,31 @@ footer {
   text-align: center;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
- 
+
+// || Character Window Content
+
+.character {
+  @include item-card()
+}
+
+.aside {
+  @include aside-panel()
+}
+
+.lore-item {
+  @include item-card()
+}
+
+.work-item {
+  @include item-card()
+}
+
+.characters-content,
+.lore-items {
+  flex: 1;
+  overflow-y: scroll;
+  padding: $spacing-xl;
+}
  
 // ============================================================
 // || Responsive Breakpoints
