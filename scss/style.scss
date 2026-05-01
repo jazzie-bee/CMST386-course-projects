@@ -593,12 +593,13 @@ footer {
 // || Window Flex Overrides
 
 .faq-content,
-.work-content {
+.works-items {
   display: block;
+  padding: $spacing-xl
 }
 
 // ============================================================
-// || Gallery
+// || Gallery Project 2
 // ============================================================
 
 .gallery {
@@ -735,7 +736,7 @@ footer {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
 
-// || Character Window Content
+// || Window Content
 
 .character {
   @include item-card()
@@ -753,11 +754,37 @@ footer {
   @include item-card()
 }
 
-.characters-content,
-.lore-items {
+.characters-items,
+.lore-items,
+.work-items {
   flex: 1;
   overflow-y: scroll;
   padding: $spacing-xl;
+}
+
+.about-content {
+  align-items: center;
+  gap: $spacing-xl;
+  padding: $spacing-2xl;
+
+  p {
+    line-height: 1.4;
+  }
+}
+
+// || Window Image Overrides
+
+.profile-img {
+  width: 100%;
+  max-width: 256px;
+  object-fit: cover;
+  margin-right: $spacing-xl;
+}
+
+.works-items img {
+  width: 100%;
+  max-width: 200px;
+  object-fit: cover;
 }
  
 // ============================================================
