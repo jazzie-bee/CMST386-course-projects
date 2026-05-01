@@ -469,136 +469,6 @@ footer {
 }
 
 // ============================================================
-// || Page Windows
-// ============================================================
-
-.container {
-  @include flex(column);
-  @include window-card;
-  z-index: 20;
-}
-
-.window {
-  @include flex(column);
-  @include window-card;   // Mixin: window card pattern
-  display: none;
-  overflow: hidden;
-  z-index: 20;
-
-  &.active {
-    display: flex;
-    z-index: 50;
-  }
-}
-
-.title-bar {
-  @include flex(row, space-between);
-  font-family: $font-body; 
-  border-bottom: solid $color-dark 1px;
-  padding: $spacing-md;
-  cursor: grab; 
-}
-
-.controls {
-  cursor: pointer;
-}
- 
-.content {
-  display: flex;
-  padding: 0;
-  overflow: hidden;
-  height: 100%;
-}
-
-.content-two-col {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: $spacing-2xl;
-  padding: $content-padding;
-
-  @include breakpoint(tablet) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.content-three-col {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: $spacing-xl;
-  padding: $content-padding;
-
-  @include breakpoint(tablet) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include breakpoint(mobile) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.feature-card {
-  background-color: $color-surface-md;
-  border-bottom: 1px solid $color-primary-dark;
-  border-radius: $border-radius-sm;
-  padding: $spacing-xl;
-
-  h2 {
-    color: $color-primary;
-    border-bottom: 2px solid $color-primary;
-    padding-bottom: $spacing-sm;
-    margin-bottom: $spacing-md;
-  }
-}
-
-.collapse-title {
-  background-color: $muted-color;
-  border-radius: $border-radius-sm;
-  padding: $spacing-lg * 1.5;
-}
- 
-// || Window Size Overrides
-// Each window can have its own dimensions while still
-// inheriting the base .window styles
-
-.window-characters {
-  width: 900px;
-  max-height: 600px;
-}
-
-.window-works {
-  width: 900px;
-  max-height: 600px;
-}
-
-.window-lore {
-  width: 850px;
-  max-height: 640px;
-}
-
-.window-about {
-  width: 850px;
-  max-height: 640px;
-}
-
-.window-process {
-  width: 850px;
-  max-height: 640px;
-}
-
-.window-faq {
-  width: 800px;
-  max-height: 600px;
-}
-
-// || Window Flex Overrides
-
-.faq-content,
-.works-items {
-  display: block;
-  padding: $spacing-xl
-}
-
-// ============================================================
 // || Gallery Project 2
 // ============================================================
 
@@ -736,6 +606,94 @@ footer {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
 
+// ============================================================
+// || Page Windows
+// ============================================================
+
+.container {
+  @include flex(column);
+  @include window-card;
+  z-index: 20;
+}
+
+.window {
+  @include flex(column);
+  @include window-card;   // Mixin: window card pattern
+  display: none;
+  overflow: hidden;
+  z-index: 20;
+
+  &.active {
+    display: flex;
+    z-index: 50;
+  }
+}
+
+.title-bar {
+  @include flex(row, space-between);
+  font-family: $font-body; 
+  border-bottom: solid $color-dark 1px;
+  padding: $spacing-md;
+  cursor: grab; 
+}
+
+.controls {
+  cursor: pointer;
+}
+ 
+.content {
+  display: flex;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+.content-two-col {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: $spacing-2xl;
+  padding: $content-padding;
+
+  @include breakpoint(tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.content-three-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-xl;
+  padding: $content-padding;
+
+  @include breakpoint(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature-card {
+  background-color: $color-surface-md;
+  border-bottom: 1px solid $color-primary-dark;
+  border-radius: $border-radius-sm;
+  padding: $spacing-xl;
+
+  h2 {
+    color: $color-primary;
+    border-bottom: 2px solid $color-primary;
+    padding-bottom: $spacing-sm;
+    margin-bottom: $spacing-md;
+  }
+}
+
+.collapse-title {
+  background-color: $muted-color;
+  border-radius: $border-radius-sm;
+  padding: $spacing-lg * 1.5;
+}
+
 // || Window Content
 
 .character {
@@ -770,6 +728,48 @@ footer {
   p {
     line-height: 1.4;
   }
+}
+
+// || Window Size Overrides
+// Each window can have its own dimensions while still
+// inheriting the base .window styles
+
+.window-characters {
+  width: 900px;
+  max-height: 600px;
+}
+
+.window-works {
+  width: 900px;
+  max-height: 600px;
+}
+
+.window-lore {
+  width: 850px;
+  max-height: 640px;
+}
+
+.window-about {
+  width: 850px;
+  max-height: 640px;
+}
+
+.window-process {
+  width: 850px;
+  max-height: 640px;
+}
+
+.window-faq {
+  width: 800px;
+  max-height: 600px;
+}
+
+// || Window Flex Overrides
+
+.faq-content,
+.works-items {
+  display: block;
+  padding: $spacing-xl
 }
 
 // || Window Image Overrides
