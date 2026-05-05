@@ -147,12 +147,12 @@ figcaption {
   font-size: small;
 }
 
-img {
-  max-width: 100px;
-}
-
 svg {
   max-width: 110px;
+}
+
+.gallery figure img {
+  max-width: 100px;
 }
 
 footer {
@@ -371,23 +371,6 @@ footer p {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  border: solid 1px;
-  border-radius: 0.313rem;
-  max-width: 1000px;
-  max-height: 1100px;
-  background-color: #fafafa;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 20;
-}
-
 .window {
   display: flex;
   flex-direction: column;
@@ -406,10 +389,6 @@ footer p {
   overflow: hidden;
   z-index: 20;
 }
-.window.active {
-  display: flex;
-  z-index: 50;
-}
 
 .title-bar {
   display: flex;
@@ -419,7 +398,6 @@ footer p {
   font-family: "Roboto", sans-serif;
   border-bottom: solid #121212 1px;
   padding: 0.75rem;
-  cursor: grab;
 }
 
 .controls {
@@ -544,36 +522,6 @@ footer p {
   line-height: 1.4;
 }
 
-.window-characters {
-  width: 900px;
-  max-height: 600px;
-}
-
-.window-works {
-  width: 900px;
-  max-height: 600px;
-}
-
-.window-lore {
-  width: 850px;
-  max-height: 640px;
-}
-
-.window-about {
-  width: 850px;
-  max-height: 640px;
-}
-
-.window-process {
-  width: 850px;
-  max-height: 640px;
-}
-
-.window-faq {
-  width: 800px;
-  max-height: 600px;
-}
-
 .faq-content,
 .works-items {
   display: block;
@@ -588,11 +536,55 @@ footer p {
   margin-right: 1.5rem;
 }
 
-.works-items img {
+.works-container {
+  border: solid 1px;
+  border-radius: 0.313rem;
+  max-width: 1000px;
+  max-height: 1100px;
+  background-color: #fafafa;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.works-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1.5rem;
+}
+@media only screen and (max-width: 600px) {
+  .works-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 450px) {
+  .works-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.gallery-item img {
   width: 100%;
-  max-width: 200px;
+  aspect-ratio: 1/1;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 0.313rem;
+  border: 1px solid #e2e2e2;
+  transition: border-color 0.3s;
+  max-width: 100%;
+}
+.gallery-item img:hover {
+  border-color: #d91a4e;
 }
 
 @media only screen and (max-width: 1440px) {

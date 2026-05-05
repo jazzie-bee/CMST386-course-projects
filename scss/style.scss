@@ -104,7 +104,7 @@ $ol-indent:         to-rem(60px);                 // ~3.33rem
   align-items: $align;
 }
 
-// Window/container card — the "page window" pattern used throughout the project
+// Window/container card — the "page window" used throughout the project
 @mixin window-card {
   border: solid 1px;
   border-radius: $border-radius-sm;
@@ -128,7 +128,7 @@ $ol-indent:         to-rem(60px);                 // ~3.33rem
   align-self: stretch;
 }
 
-// Item cards - for preview card of characters, lore, works, etc.
+// Item cards - for preview card of characters, lore, etc.
 @mixin item-card {
   @include flex(column, flex-start, center);
   border: 1px solid $color-dark;
@@ -352,6 +352,9 @@ svg {
   max-width: $logo-img-sm;
 }
 
+.gallery figure img {
+  max-width: $gallery-img-size;
+}
  
 // --- Footer ---
 footer {
@@ -488,10 +491,6 @@ footer {
     text-align: center;
     margin-top: $spacing-sm / 2;  // Operator: 0.5rem / 2 = 0.25rem
   }
-}
-
-.gallery figure img {
-  max-width: $gallery-img-size;
 }
 
 // ============================================================
@@ -738,45 +737,43 @@ footer {
 // || Works Page
 // ============================================================
 
+.works-container {
+  @include window-card()
+}
+
 .works-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: $spacing-lg;
   padding: $spacing-xl;
+
+    @include breakpoint(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint(mobile) {
+      grid-template-columns: 1fr;
+    }
 }
 
 .gallery-item {
   @include flex(column, flex-start, center);
   gap: $spacing-sm;
   cursor: pointer;
-}
 
-img {
-  width: 100%;
-  aspect-ratio: 1 /1;
-  object-fit: cover;
-  border-radius: $border-radius-sm;
-  border: 1px solid $color-surface-md;
-  @include transition(border-color);
-  max-width: 100%;
+  img {
+    width: 100%;
+    aspect-ratio: 1 /1;
+    object-fit: cover;
+    border-radius: $border-radius-sm;
+    border: 1px solid $color-surface-md;
+    @include transition(border-color);
+    max-width: 100%;
 
-  &:hover {
-    border-color: $color-primary;
+    &:hover {
+      border-color: $color-primary;
+    }
   }
-}
-
-figcaption {
-  font-size: $font-small;
-  color: $muted-color;
-  text-align: center;
-}
-
-@include breakpoint(tablet) {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-@include breakpoint(mobile) {
-  grid-template-columns: 1fr;
 }
 
 // ============================================================
