@@ -347,10 +347,6 @@ ol {
 figcaption {
   font-size: $font-figcaption;
 }
- 
-img {
-  max-width: $gallery-img-size;
-}
 
 svg {
   max-width: $logo-img-sm;
@@ -494,6 +490,9 @@ footer {
   }
 }
 
+.gallery figure img {
+  max-width: $gallery-img-size;
+}
 
 // ============================================================
 // || Project 2
@@ -610,23 +609,12 @@ footer {
 // || Page Windows
 // ============================================================
 
-.container {
-  @include flex(column);
-  @include window-card;
-  z-index: 20;
-}
-
 .window {
   @include flex(column);
-  @include window-card;   // Mixin: window card pattern
+  @include window-card;
   display: none;
   overflow: hidden;
   z-index: 20;
-
-  &.active {
-    display: flex;
-    z-index: 50;
-  }
 }
 
 .title-bar {
@@ -729,40 +717,6 @@ footer {
   }
 }
 
-// || Window Size Overrides
-// Each window can have its own dimensions while still
-// inheriting the base .window styles
-
-.window-characters {
-  width: 900px;
-  max-height: 600px;
-}
-
-.window-works {
-  width: 900px;
-  max-height: 600px;
-}
-
-.window-lore {
-  width: 850px;
-  max-height: 640px;
-}
-
-.window-about {
-  width: 850px;
-  max-height: 640px;
-}
-
-.window-process {
-  width: 850px;
-  max-height: 640px;
-}
-
-.window-faq {
-  width: 800px;
-  max-height: 600px;
-}
-
 // || Window Flex Overrides
 
 .faq-content,
@@ -780,12 +734,51 @@ footer {
   margin-right: $spacing-xl;
 }
 
-.works-items img {
-  width: 100%;
-  max-width: 200px;
-  object-fit: cover;
+// ============================================================
+// || Works Page
+// ============================================================
+
+.works-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-lg;
+  padding: $spacing-xl;
 }
- 
+
+.gallery-item {
+  @include flex(column, flex-start, center);
+  gap: $spacing-sm;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  aspect-ratio: 1 /1;
+  object-fit: cover;
+  border-radius: $border-radius-sm;
+  border: 1px solid $color-surface-md;
+  @include transition(border-color);
+  max-width: 100%;
+
+  &:hover {
+    border-color: $color-primary;
+  }
+}
+
+figcaption {
+  font-size: $font-small;
+  color: $muted-color;
+  text-align: center;
+}
+
+@include breakpoint(tablet) {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@include breakpoint(mobile) {
+  grid-template-columns: 1fr;
+}
+
 // ============================================================
 // || Responsive Breakpoints
 // Using the breakpoint() mixin so pixel values are defined
