@@ -190,7 +190,6 @@ body::before {
   position: fixed;
   inset: 0;
 
-    // Operators: $color-primary used directly — no more hardcoded hex in gradients
   background-image:
     linear-gradient($color-primary 1px, transparent 1px),
     linear-gradient(90deg, $color-primary 1px, transparent 1px);
@@ -355,9 +354,11 @@ svg {
 footer {
   font-size: $font-small;
   margin: $footer-margin 0 auto;
+  padding: $spacing-sm;
  
   p {
     text-align: center;
+    padding-bottom: $spacing-sm;
   }
 }
 
@@ -732,7 +733,8 @@ footer {
 // || Window Flex Overrides
 
 .faq-content,
-.works-items {
+.works-items,
+.commission-content {
   display: block;
   padding: $spacing-xl
 }
@@ -753,7 +755,8 @@ footer {
 .container {
   @include window-card();
   @include flex(column);
-  max-height: 85vh;
+  height: 700px;
+  max-height: 80vh;
   overflow: hidden;
 }
 
@@ -791,6 +794,123 @@ footer {
       border-color: $color-primary;
     }
   }
+}
+
+// ============================================================
+// || Contact Page
+// ============================================================
+
+span {
+  color: $color-primary;
+}
+
+fieldset {
+  border: 1px solid $color-surface-md;
+  border-radius: $border-radius-sm;
+  padding: $spacing-xl;
+  gap: $spacing-lg;
+
+  legend {
+    font-family: $font-display;
+    font-weight: 400;
+    padding: 0 $spacing-sm;
+    color: $color-primary;
+  }
+}
+
+.contact-content {
+  @include flex(column);
+  overflow: visible;
+  padding: $spacing-xl;
+  gap: $spacing-lg;
+  // flex: 1;
+  // min-height: 0;
+}
+
+.container-contact {
+  height: auto;
+  max-height: 1032px;
+  overflow: visible;
+}
+
+.form-group {
+  @include flex(column);
+  gap: $spacing-sm;
+
+  label {
+    font-family: $font-body;
+    font-weight: 500;
+    color: $color-dark;
+    padding-top: $spacing-md;
+  }
+
+  .form-label {
+    font-weight: 700;
+    color: $color-dark;
+  }
+}
+
+input[type="text"],
+select,
+textarea {
+  font-family: $font-body;
+  font-size: $font-base;
+  color: $color-dark;
+  background-color: $color-surface;
+  border: 1px solid $color-surface-md;
+  border-radius: $border-radius-sm;
+  padding: $spacing-sm $spacing-md;
+  width: 100%;
+  @include transition(border-color);
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+  }
+
+  &::placeholder {
+    color: $muted-color;
+  }
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.radio-group,
+.checkbox-group {
+  @include flex(column);
+  gap: $spacing-sm;
+}
+
+.radio-label,
+.checkbox-label {
+  @include flex(row, flex-start, center);
+  gap: $spacing-sm;
+  font-size: $font-small;
+  cursor: pointer;
+
+  input {
+    accent-color: $color-primary;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+}
+
+.required {
+  color: $color-primary;
+}
+
+.required-note {
+  font-size: $font-small;
+  color: $muted-color;
+}
+
+#form-error {
+  font-size: $font-small;
+  min-height: 1rem;
 }
 
 // ============================================================

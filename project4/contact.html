@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container container-contact">
         <div class="title-bar">
             <div class="title">contact.html</div>
             <div class="controls"><i class="fa-solid fa-xmark"></i></div>
@@ -62,96 +62,96 @@
         <div class="content contact-content">
             <h1>Contact</h1>
             <p>Have a question or want to work together? Fill out the form below and I'll be in touch.</p>
-            <div class="form-panel">
-                <form id="contact-form" action="mailto:your@email.com" method="post" enctype="text/plain" novalidate>
+            <form id="contact-form" action="mailto:hybridarts01@gmail.com" method="post" enctype="text/plain" novalidate>
 
-                    <fieldset>
-                        <legend>Send a Message</legend>
+                <fieldset>
+                    <legend>Send a Message</legend>
 
-                        <div class="form-group">
-                            <label for="name">Name <span class="required">*</span></label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="e.g. Jane Doe"
-                                tabindex="1"
-                                required>
-                        </div>
+                    <div class="form-group">
+                        <label for="name">Name<span class="required">*</span></label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="e.g. Jane Doe"
+                            tabindex="1"
+                            required>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="email">Email <span class="required">*</span></label>
-                            <input
-                                type="text"
-                                id="email"
-                                name="email"
-                                placeholder="e.g. jane@email.com"
-                                tabindex="2"
-                                required>
-                        </div>
+                    <div class="form-group">
+                        <label for="email">Email<span class="required">*</span></label>
+                        <input
+                            type="text"
+                            id="email"
+                            name="email"
+                            placeholder="e.g. jane@email.com"
+                            tabindex="2"
+                            required>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <select id="subject" name="subject" tabindex="3">
-                                <option value="" disabled selected>Select a topic</option>
-                                <option value="commission">Commission Inquiry</option>
-                                <option value="collaboration">Collaboration</option>
-                                <option value="general">General Question</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" tabindex="3">
+                            <option value="" disabled selected>Select a topic</option>
+                            <option value="commission">Commission Inquiry</option>
+                            <option value="collaboration">Collaboration</option>
+                            <option value="general">General Question</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
 
-                        <div class="form-group">
-                            <label for="message">Message <span class="required">*</span></label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="5"
-                                placeholder="What's on your mind?"
-                                tabindex="4"
-                                required></textarea>
-                        </div>
+                    <div class="form-group">
+                        <label for="message">Message<span class="required">*</span></label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            placeholder="What's on your mind?"
+                            tabindex="4"
+                            required></textarea>
+                    </div>
 
-                        <div class="form-group">
-                            <p class="form-label">How did you find me?</p>
-                            <div class="radio-group">
-                                <label class="radio-label">
-                                    <input type="radio" name="source" value="social" tabindex="5">
-                                    Social Media
-                                </label>
-                                <label class="radio-label">
-                                    <input type="radio" name="source" value="friend" tabindex="6">
-                                    Word of Mouth
-                                </label>
-                                <label class="radio-label">
-                                    <input type="radio" name="source" value="search" tabindex="7">
-                                    Search Engine
-                                </label>
-                                <label class="radio-label">
-                                    <input type="radio" name="source" value="other" tabindex="8">
-                                    Other
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="newsletter" value="yes" tabindex="9">
-                                Subscribe to occasional updates
+                    <hr>
+                    
+                    <div class="form-group">
+                        <p class="form-label">How did you find me?</p>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="source" value="social" tabindex="5">
+                                Social Media
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="source" value="friend" tabindex="6">
+                                Word of Mouth
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="source" value="search" tabindex="7">
+                                Search Engine
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="source" value="other" tabindex="8">
+                                Other
                             </label>
                         </div>
+                    </div>
 
-                    </fieldset>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="newsletter" value="yes" tabindex="9">
+                            Subscribe to occasional updates
+                        </label>
+                    </div>
 
-                    <p class="required-note"><span class="required">*</span> Required fields</p>
-                    <p id="form-error" role="alert"></p>
+                </fieldset>
 
-                    <button type="submit" class="cta-btn" tabindex="10">
-                        <i class="fa-solid fa-paper-plane"></i>&nbsp; Send Message
-                    </button>
+                <p class="required-note"><span class="required">*</span> Required fields</p>
+                <p id="form-error" role="alert"></p>
 
-                </form>
-            </div>
+                <button type="submit" class="cta-btn" tabindex="10">
+                    <i class="fa-solid fa-paper-plane"></i>&nbsp; Send Message
+                </button>
+
+            </form>
         </div>
     </div>
 
