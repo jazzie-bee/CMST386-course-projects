@@ -43,7 +43,7 @@ $spacing-section:   4rem;
 
 // Layout
 $container-max-width:     1000px;
-$container-max-height:     1100px;
+$container-max-height:     1000px;
 $nav-min-width:     43.75rem;
 $border-radius-sm:  0.313rem;
 $border-radius-md:  0.5rem;
@@ -109,12 +109,8 @@ $ol-indent:         to-rem(60px);                 // ~3.33rem
   border: solid 1px;
   border-radius: $border-radius-sm;
   max-width: $container-max-width;
-  max-height: $container-max-height;
   background-color: $color-bg;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: $spacing-section auto;
 }
 
 // Side panel - fixed sidebar with border separator
@@ -133,7 +129,6 @@ $ol-indent:         to-rem(60px);                 // ~3.33rem
   @include flex(column, flex-start, center);
   border: 1px solid $color-dark;
   border-radius: $border-radius-sm;
-  padding: $spacing-xl;
   margin: 0 0 24px;
   gap: $spacing-md;
 }
@@ -622,8 +617,10 @@ footer {
 .content {
   display: flex;
   padding: 0;
-  overflow: hidden;
+  flex: 1;
   height: 100%;
+  overflow: hidden;
+  min-height: 0;
 }
 
 .content-two-col {
@@ -675,7 +672,14 @@ footer {
 // || Window Content
 
 .character {
-  @include item-card()
+  @include item-card();
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
 }
 
 .aside {
@@ -730,7 +734,10 @@ footer {
 // ============================================================
 
 .container {
-  @include window-card()
+  @include window-card();
+  @include flex(column);
+  max-height: 85vh;
+  overflow: hidden;
 }
 
 .works-gallery {
@@ -741,6 +748,7 @@ footer {
 
     @include breakpoint(tablet) {
       grid-template-columns: repeat(2, 1fr);
+      margin: $spacing-md;
     }
 
     @include breakpoint(mobile) {
@@ -785,8 +793,7 @@ footer {
     display: none;
   }
 
-  .container, 
-  .window {
+  .container {
     width: 90vw;
     max-height: 70vh;
   }
@@ -806,8 +813,7 @@ footer {
     padding: $spacing-lg 0;
   }
 
-  .container, 
-  .window {
+  .container {
     width: 92vw;
     max-height: 75vh;
     margin: $spacing-lg auto;

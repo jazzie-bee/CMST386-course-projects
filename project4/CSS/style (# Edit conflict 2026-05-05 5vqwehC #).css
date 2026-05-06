@@ -388,10 +388,8 @@ footer p {
 .content {
   display: flex;
   padding: 0;
-  flex: 1;
-  height: 100%;
   overflow: hidden;
-  min-height: 0;
+  height: 100%;
 }
 
 .content-two-col {
@@ -449,14 +447,9 @@ footer p {
   align-items: center;
   border: 1px solid #121212;
   border-radius: 0.313rem;
+  padding: 1.5rem;
   margin: 0 0 24px;
   gap: 0.75rem;
-}
-.character img {
-  width: 100%;
-  object-fit: cover;
-  object-position: top;
-  display: block;
 }
 
 .aside {
@@ -476,6 +469,7 @@ footer p {
   align-items: center;
   border: 1px solid #121212;
   border-radius: 0.313rem;
+  padding: 1.5rem;
   margin: 0 0 24px;
   gap: 0.75rem;
 }
@@ -487,6 +481,7 @@ footer p {
   align-items: center;
   border: 1px solid #121212;
   border-radius: 0.313rem;
+  padding: 1.5rem;
   margin: 0 0 24px;
   gap: 0.75rem;
 }
@@ -525,14 +520,12 @@ footer p {
   border: solid 1px;
   border-radius: 0.313rem;
   max-width: 1000px;
+  max-height: 1000px;
   background-color: #fafafa;
-  margin: 4rem auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  max-height: 85vh;
-  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .works-gallery {
@@ -544,7 +537,6 @@ footer p {
 @media only screen and (max-width: 600px) {
   .works-gallery {
     grid-template-columns: repeat(2, 1fr);
-    margin: 0.75rem;
   }
 }
 @media only screen and (max-width: 450px) {
@@ -583,7 +575,8 @@ footer p {
   .bg-bust {
     display: none;
   }
-  .container {
+  .container,
+  .window {
     width: 90vw;
     max-height: 70vh;
   }
@@ -601,7 +594,8 @@ footer p {
     width: 100vw;
     padding: 1rem 0;
   }
-  .container {
+  .container,
+  .window {
     width: 92vw;
     max-height: 75vh;
     margin: 1rem auto;
