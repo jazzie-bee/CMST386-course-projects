@@ -437,9 +437,26 @@ footer p {
 }
 
 .collapse-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   background-color: #777777;
   border-radius: 0.313rem;
   padding: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.collapse-title:hover {
+  background-color: #584148;
+  color: #fafafa;
+}
+.collapse-title i {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+.collapse-title.open i {
+  transform: rotate(180deg);
 }
 
 .character {

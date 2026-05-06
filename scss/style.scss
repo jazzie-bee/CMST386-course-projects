@@ -664,9 +664,26 @@ footer {
 }
 
 .collapse-title {
+  @include flex(row, space-between, center);
   background-color: $muted-color;
   border-radius: $border-radius-sm;
   padding: $spacing-lg * 1.5;
+  cursor: pointer;
+  @include transition();
+
+  &:hover {
+    background-color: $color-accent-dark;
+    color: $color-bg
+  }
+
+  i {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  &.open i {
+    transform: rotate(180deg);
+  }
 }
 
 // || Window Content
