@@ -608,14 +608,6 @@ footer {
 // || Page Windows
 // ============================================================
 
-.window {
-  @include flex(column);
-  @include window-card;
-  display: none;
-  overflow: hidden;
-  z-index: 20;
-}
-
 .title-bar {
   @include flex(row, space-between);
   font-family: $font-body; 
@@ -737,7 +729,7 @@ footer {
 // || Works Page
 // ============================================================
 
-.works-container {
+.container {
   @include window-card()
 }
 
