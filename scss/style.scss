@@ -923,6 +923,44 @@ textarea {
   min-height: 1rem;
 }
 
+// || Process Page
+
+.process-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: $spacing-xl;
+}
+
+.process-step {
+  margin-bottom: $spacing-2xl;
+  padding-bottom: $spacing-2xl;
+  border-bottom: 1px solid $color-surface-md;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  h2 {
+    color: $color-primary;
+    margin-bottom: $spacing-md;
+  }
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: $border-radius-sm;
+    border: 1px solid $color-surface-md;
+    margin-bottom: $spacing-lg;
+    object-fit: cover;
+  }
+
+  p {
+    line-height: 1.6;
+    color: $color-dark;
+  }
+}
+
 // ============================================================
 // || Privacy Policy Page
 // ============================================================
