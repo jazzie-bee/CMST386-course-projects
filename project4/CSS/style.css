@@ -559,6 +559,12 @@ footer p {
   overflow: hidden;
 }
 
+.container-auto {
+  height: auto;
+  max-height: 1000px;
+  overflow: visible;
+}
+
 .works-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

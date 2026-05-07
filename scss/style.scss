@@ -764,6 +764,12 @@ footer {
   overflow: hidden;
 }
 
+.container-auto {
+  height: auto;
+  max-height: $container-max-height;
+  overflow: visible;
+}
+
 .works-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
