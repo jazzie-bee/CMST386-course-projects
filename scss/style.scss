@@ -178,11 +178,14 @@ $ol-indent:         to-rem(60px);                 // ~3.33rem
 
 // --- Body ---
 body {
+  display: flex;
+  flex-direction: column;
   scroll-behavior: smooth;
   background-color: $color-bg;
  
   font-size: $font-base;
   width: 100%;
+  min-height: 100vh;
 }
 
 body::before {
@@ -353,7 +356,8 @@ svg {
 // --- Footer ---
 footer {
   font-size: $font-small;
-  margin: $footer-margin 0 auto;
+  // margin: $footer-margin 0 auto;
+  margin-top: auto;
   padding: $spacing-sm;
  
   p {
@@ -911,6 +915,123 @@ textarea {
 #form-error {
   font-size: $font-small;
   min-height: 1rem;
+}
+
+// ============================================================
+// || Privacy Policy Page
+// ============================================================
+
+.privacy-policy {
+  padding: $spacing-xl;
+  overflow-y: auto;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  line-height: 1.6;
+
+  // Subtitle under the h1
+  .subtitle {
+    color: $muted-color;
+    font-size: $font-small;
+    margin-bottom: $spacing-xl;
+  }
+
+  // Section headings styled with brand colors
+  h1 {
+    color: $color-dark;
+    border-bottom: 2px solid $color-primary;
+    padding-bottom: $spacing-sm;
+    margin-bottom: $spacing-lg;
+  }
+
+  h2 {
+    color: $color-primary;
+    margin-top: $spacing-2xl;
+    margin-bottom: $spacing-md;
+    padding-bottom: $spacing-sm;
+    border-bottom: 1px solid $color-surface-md;
+  }
+
+  h3 {
+    color: $color-dark;
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-md;
+  }
+
+  p {
+    color: $color-dark;
+    margin-bottom: $spacing-lg;
+  }
+
+  // Lists
+  ul, ol {
+    padding-left: $ol-indent;
+    margin-bottom: $spacing-lg;
+    list-style: disc;
+
+    li {
+      color: $color-dark;
+      margin-bottom: $spacing-sm;
+      line-height: 1.6;
+    }
+  }
+
+  .toc-list {
+    list-style: decimal;
+
+    li {
+      padding: $spacing-sm 0;
+      border-bottom: 1px solid $color-surface-md;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  // Privacy table
+  .privacy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: $spacing-xl 0;
+    font-size: $font-small;
+
+    th {
+      background-color: $color-primary;
+      color: $color-bg;
+      font-family: $font-display;
+      font-weight: 400;
+      padding: $spacing-md;
+      text-align: left;
+      border: 1px solid $color-primary-dark;
+    }
+
+    td {
+      padding: $spacing-md;
+      border: 1px solid $color-surface-md;
+      color: $color-dark;
+      vertical-align: top;
+
+      // "NO" column centered
+      &:last-child {
+        text-align: center;
+        color: $muted-color;
+        font-weight: 700;
+      }
+    }
+
+    tr:nth-child(even) td {
+      background-color: $color-surface;
+    }
+  }
+
+  // Credit line at the bottom
+  .privacy-credit {
+    margin-top: $spacing-2xl;
+    padding-top: $spacing-lg;
+    border-top: 1px solid $color-surface-md;
+    color: $muted-color;
+    font-size: $font-small;
+  }
 }
 
 // ============================================================

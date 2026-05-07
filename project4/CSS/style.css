@@ -6,10 +6,13 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   scroll-behavior: smooth;
   background-color: #fafafa;
   font-size: 18px;
   width: 100%;
+  min-height: 100vh;
 }
 
 body::before {
@@ -157,7 +160,7 @@ svg {
 
 footer {
   font-size: 0.75rem;
-  margin: 1rem 0 auto;
+  margin-top: auto;
   padding: 0.5rem;
 }
 footer p {
@@ -715,6 +718,97 @@ textarea {
 #form-error {
   font-size: 0.75rem;
   min-height: 1rem;
+}
+
+.privacy-policy {
+  padding: 1.5rem;
+  overflow-y: auto;
+  max-width: 1000px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+.privacy-policy .subtitle {
+  color: #777777;
+  font-size: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.privacy-policy h1 {
+  color: #121212;
+  border-bottom: 2px solid #d91a4e;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.privacy-policy h2 {
+  color: #d91a4e;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e2e2;
+}
+.privacy-policy h3 {
+  color: #121212;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.privacy-policy p {
+  color: #121212;
+  margin-bottom: 1rem;
+}
+.privacy-policy ul, .privacy-policy ol {
+  padding-left: 3.3333333333rem;
+  margin-bottom: 1rem;
+  list-style: disc;
+}
+.privacy-policy ul li, .privacy-policy ol li {
+  color: #121212;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+.privacy-policy .toc-list {
+  list-style: decimal;
+}
+.privacy-policy .toc-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e2e2e2;
+}
+.privacy-policy .toc-list li:last-child {
+  border-bottom: none;
+}
+.privacy-policy .privacy-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.75rem;
+}
+.privacy-policy .privacy-table th {
+  background-color: #d91a4e;
+  color: #fafafa;
+  font-family: "Datatype", monospace;
+  font-weight: 400;
+  padding: 0.75rem;
+  text-align: left;
+  border: 1px solid #970d32;
+}
+.privacy-policy .privacy-table td {
+  padding: 0.75rem;
+  border: 1px solid #e2e2e2;
+  color: #121212;
+  vertical-align: top;
+}
+.privacy-policy .privacy-table td:last-child {
+  text-align: center;
+  color: #777777;
+  font-weight: 700;
+}
+.privacy-policy .privacy-table tr:nth-child(even) td {
+  background-color: #f6f6f6;
+}
+.privacy-policy .privacy-credit {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e2e2;
+  color: #777777;
+  font-size: 0.75rem;
 }
 
 @media only screen and (max-width: 1440px) {
