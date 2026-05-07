@@ -214,6 +214,7 @@ hr {
 
 // --- Navigation ---
 nav {
+  @include flex(row, flex-start, center);
   min-width: $nav-min-width;
   position: relative;
   top: 0;
@@ -226,11 +227,64 @@ nav {
   // Nested: ul inside nav
   ul {
     @include flex(row, left, center);
-    margin: 0 auto;
+    margin: 0;
     gap: $nav-gap; // Operator: $spacing-lg * 2 = 2rem
   }
 }
 
+// || Search Form
+
+.search-form {
+  @include flex(row, flex-start, center);
+  gap: $spacing-sm;
+  margin-left: auto;  // pushes search to the right side of the nav
+  padding: $spacing-sm 0;
+}
+
+.search-input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: $border-radius-sm;
+  color: $color-bg;
+  font-family: $font-body;
+  font-size: $font-small;
+  padding: $spacing-sm $spacing-md;
+  width: 160px;
+  @include transition(border-color);
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 220px;      // expands slightly on focus
+    transition: width 0.3s ease, border-color 0.3s ease;
+  }
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  color: $color-bg;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: $spacing-sm;
+  @include transition(color);
+
+  &:hover {
+    color: $color-cyan;
+  }
+}
+
+// Hide search on mobile to save nav space
+@include breakpoint(mobile) {
+  .search-form {
+    display: none;
+  }
+}
 
 // --- Base List ---
 ul {
